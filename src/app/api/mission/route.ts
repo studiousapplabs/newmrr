@@ -3,7 +3,7 @@ import { getMission, getMissionTrackInfo } from '@/lib/missions'
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
-  const phase = searchParams.get('phase') as 'grind' | 'growth' | 'gold' || 'grind'
+  const phase = searchParams.get('phase') as 'foundation' | 'momentum' | 'scale' || 'grind'
   const block = searchParams.get('block') || 'I don\'t have enough customers'
   const weekNumber = parseInt(searchParams.get('week') || '1')
 
