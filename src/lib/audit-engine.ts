@@ -1,5 +1,5 @@
 // The Skill-to-Revenue Mapping Engine
-// Built on Ryan Daniel Moran's 12 Months to $1M framework
+// Built on proven entrepreneur framework
 
 export type SkillCategory = 'consultant' | 'coach' | 'creator' | 'productized'
 
@@ -12,14 +12,14 @@ export interface AuditResult {
   skillCategory: SkillCategory
   skillLabel: string
   audience: string
-  gatewayProduct: string
+  entryOffer: string
   gatewayPrice: number
   recurringModel: string
   recurringPrice: number
   dailySalesTarget: number
   monthlyRevenuePotential: number
   annualRevenuePotential: number
-  phase: 'grind' | 'growth' | 'gold'
+  phase: 'foundation' | 'momentum' | 'scale'
   phaseLabel: string
   actionPlan: string[]
   headline: string
@@ -202,45 +202,45 @@ function getDailySalesTarget(revenueGoal: string, recurringPrice: number): numbe
     '$50,000+/month': 50000,
   }
   const monthlyTarget = goalMap[revenueGoal] || 5000
-  // Moran's formula: daily sales to hit target
+  // formula: daily sales to hit target
   return Math.ceil(monthlyTarget / recurringPrice)
 }
 
-function getPhase(audienceBuilt: string, delivery: string): { phase: 'grind' | 'growth' | 'gold'; label: string } {
+function getPhase(audienceBuilt: string, delivery: string): { phase: 'foundation' | 'momentum' | 'scale'; label: string } {
   if (audienceBuilt === 'Large — 1,000+ people') {
-    return { phase: 'gold', label: 'The Gold — Ready to Scale' }
+    return { phase: 'scale', label: 'The Scale — Ready to Scale' }
   }
   if (audienceBuilt === 'Medium — 100–1,000 people' || delivery !== 'I haven\'t monetized it yet') {
-    return { phase: 'growth', label: 'The Growth — Building Momentum' }
+    return { phase: 'momentum', label: 'The Momentum — Building Momentum' }
   }
-  return { phase: 'grind', label: 'The Grind — Where It All Starts' }
+  return { phase: 'foundation', label: 'The Foundation — Where It All Starts' }
 }
 
-function getActionPlan(phase: 'grind' | 'growth' | 'gold', category: SkillCategory): string[] {
-  const plans: Record<'grind' | 'growth' | 'gold', string[]> = {
-    grind: [
+function getActionPlan(phase: 'foundation' | 'momentum' | 'scale', category: SkillCategory): string[] {
+  const plans: Record<'foundation' | 'momentum' | 'scale', string[]> = {
+    foundation: [
       'This week: Identify your first 100 target audience members (LinkedIn, Facebook groups, Reddit)',
       'Week 2: Reach out to 10 of them. Ask what their #1 pain point is — don\'t sell yet',
-      'Week 3: Package your skill into the gateway product. Price it. Build a simple checkout page',
+      'Week 3: Package your skill into the entry offer. Price it. Build a simple checkout page',
       'Week 4: Pre-sell to the people you\'ve been talking to. Goal: 3 paying customers',
       'Month 2: Deliver exceptional results. Get testimonials. Ask for referrals',
       'Month 3: Launch your recurring model to your first buyers. This is where MRR starts',
     ],
-    growth: [
+    momentum: [
       'This week: Set up your recurring offer and payment link if you haven\'t already',
-      'Week 2: Email your existing audience or past clients. Offer the gateway product',
+      'Week 2: Email your existing audience or past clients. Offer the entry offer',
       'Week 3: Post 3x per week on the platform where your audience lives — teach, don\'t pitch',
       'Month 2: Run a small paid campaign ($10/day) to your best-performing content',
       'Month 3: Add a second product to your existing buyers — they already trust you',
       'Month 4: Hire a VA to handle fulfillment tasks so your time goes to growth',
     ],
-    gold: [
+    scale: [
       'This week: Audit your current offers — identify what has the highest LTV',
       'Week 2: Build a referral system. Your existing audience will grow your next audience',
       'Week 3: Launch product #2 to your existing audience. Same people, new offer',
       'Month 2: Test paid traffic to your best-converting offer. Scale what works',
       'Month 3: Document your systems. Build for exit readiness from now',
-      'Month 4: Stack product #3. You\'re in The Gold phase — 100 sales/day is achievable',
+      'Month 4: Stack product #3. You\'re in The Scale phase — 100 sales/day is achievable',
     ],
   }
   return plans[phase]
@@ -259,7 +259,7 @@ export function calculateAuditResult(answers: AuditAnswer[]): AuditResult {
 
   const category = detectSkillCategory(answers)
   const skillLabel = getSkillLabel(category, skillAnswer)
-  const { product: gatewayProduct, price: gatewayPrice } = getGatewayProduct(category, skillAnswer, audienceAnswer)
+  const { product: entryOffer, price: gatewayPrice } = getGatewayProduct(category, skillAnswer, audienceAnswer)
   const { model: recurringModel, price: recurringPrice } = getRecurringModel(category, skillAnswer)
   const dailySalesTarget = getDailySalesTarget(revenueGoal, recurringPrice)
   const monthlyRevenuePotential = dailySalesTarget * recurringPrice
@@ -270,7 +270,7 @@ export function calculateAuditResult(answers: AuditAnswer[]): AuditResult {
     skillCategory: category,
     skillLabel,
     audience: audienceAnswer,
-    gatewayProduct,
+    entryOffer,
     gatewayPrice,
     recurringModel,
     recurringPrice,

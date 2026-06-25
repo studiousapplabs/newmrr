@@ -148,9 +148,9 @@ input, textarea, select {
   text-transform: uppercase;
 }
 
-.phase-grind { background: rgba(255,100,50,0.15); color: #FF6432; border: 1px solid rgba(255,100,50,0.3); }
-.phase-growth { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid var(--border); }
-.phase-gold { background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+.phase-foundation { background: rgba(255,100,50,0.15); color: #FF6432; border: 1px solid rgba(255,100,50,0.3); }
+.phase-momentum { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid var(--border); }
+.phase-scale { background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
 
 /* Nav */
 .nav {

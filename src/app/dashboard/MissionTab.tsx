@@ -40,7 +40,7 @@ export default function MissionTab({ result, biggestBlock }: { result: AuditResu
     setLoading(true)
     try {
       const params = new URLSearchParams({
-        phase: result.phase || 'grind',
+        phase: result.phase || 'foundation',
         block: biggestBlock || 'I don\'t have enough customers',
         week: week.toString(),
       })
@@ -91,7 +91,7 @@ export default function MissionTab({ result, biggestBlock }: { result: AuditResu
       {/* Track info */}
       <div style={{ marginBottom: 24 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, flexWrap: 'wrap' }}>
-          <span className={`phase-badge phase-${result?.phase || 'growth'}`}>{trackInfo.phase}</span>
+          <span className={`phase-badge phase-${result?.phase || 'momentum'}`}>{trackInfo.phase}</span>
           <span style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>→</span>
           <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>{trackInfo.block} Track</span>
         </div>

@@ -1,24 +1,655 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// Generate personalized text content for each resource
 function generateContent(resource: string, data: Record<string, string>): string {
-  const { skill, audience, gatewayProduct, gatewayPrice, recurringModel, recurringPrice, monthlyTarget, dailyTarget } = data
+  const { skill, audience, entryOffer, gatewayPrice, recurringModel, recurringPrice, phase, name, monthlyTarget, dailyTarget } = data
 
   const resources: Record<string, string> = {
-    'outreach-script': `OUTREACH SCRIPT (TAG FORMULA)\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nT — TELL THEM WHAT YOU DO\n"Hey [Name], I help ${audience} with ${skill}. I put together a [${gatewayProduct}] that gets results fast."\n\nA — ASK IF THEY WANT TO BE INVOLVED\n"Is ${skill} something you've been trying to improve? I'm looking for people to work with this month."\n\nG — GO FOR THE SMALLEST YES\n"Would it be okay if I sent you some info about the ${gatewayProduct}? It's $${gatewayPrice}. No pressure."\n\nFOLLOW UP\nDay 1: Send the script above\nDay 3: "Did you get a chance to look?"\nDay 7: "Last follow up — one spot left."\n\nYOUR TARGET: ${dailyTarget} new customers/month\nYOUR MRR GOAL: $${monthlyTarget}/month\n\nnewmrr.com`,
+    'outreach-script': `
+OUTREACH SCRIPT (TAG FORMULA)
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
 
-    'gateway-checklist': `GATEWAY PRODUCT LAUNCH CHECKLIST\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nYOUR GATEWAY PRODUCT: ${gatewayProduct}\nPRICE: $${gatewayPrice}\nTARGET: ${audience}\n\nWEEK 1 — BUILD\n[ ] Write one sentence describing ${gatewayProduct}\n[ ] Identify 20 specific ${audience} with this problem\n[ ] Set up payment link for $${gatewayPrice}\n[ ] Write 3 bullet points of what they get\n[ ] Get one testimonial (free work counts)\n\nWEEK 2 — REACH OUT\n[ ] Contact first 5 prospects using TAG formula\n[ ] Post once where ${audience} hang out\n[ ] Follow up with non-responders\n[ ] Ask 3 people for referrals\n[ ] Pre-sell to at least 1 person\n\nWEEK 3 — DELIVER\n[ ] Deliver ${gatewayProduct} to first customer\n[ ] Ask for testimonial immediately\n[ ] Document what worked\n[ ] Offer ${recurringModel} at $${recurringPrice}/mo\n\nTARGET: First sale Week 2, First MRR Month 2\n\nnewmrr.com`,
+YOUR PERSONALIZED TAG OUTREACH SCRIPT
+Target Audience: ${audience}
+Your Offer: ${entryOffer} at $${gatewayPrice}
 
-    'prelaunch-playbook': `STACK THE DECK: PRE-LAUNCH PLAYBOOK\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nTHE 1000/10/1 METHOD\nFor: ${gatewayProduct} at $${gatewayPrice}\n\nPHASE 1: THE 1000 (4 weeks before)\n[ ] Post 3x/week about ${skill}\n[ ] Join 5 communities where ${audience} gather\n[ ] Comment value on 10 posts/day\n[ ] Collect emails — 100 is enough to launch\n\nContent angles:\n→ "The #1 mistake ${audience} make with ${skill}"\n→ "How I helped a client get [result]"\n→ "3 things I wish I knew about ${skill}"\n\nPHASE 2: THE 10 (2 weeks before)\n[ ] Find 10 micro-influencers with ${audience}\n[ ] Use TAG formula to reach out\n[ ] Offer free access to ${gatewayProduct}\n[ ] Brief them on launch day posting\n\nPHASE 3: THE 1 (Launch week)\n[ ] Email list day before: "Tomorrow is the day"\n[ ] Post on every platform launch morning\n[ ] Have 10 partners post simultaneously\n[ ] Respond to every comment personally\n\nLAUNCH TARGET: 3 sales in first 48 hours\nMRR TARGET: $${monthlyTarget}/month\n\nnewmrr.com`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    'email-sequence': `5-EMAIL WELCOME SEQUENCE\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nEMAIL 1 — DAY 0\nSubject: You are in — here's what happens next\n\nHey [First Name],\nWelcome. I help ${audience} with ${skill}.\nOver the next 7 days I will show you exactly how.\n[Your Name]\n\nEMAIL 2 — DAY 1\nSubject: The ${skill} mistake costing you money\n\nMost ${audience} undercharge for ${skill}.\nI have seen people go from $0 to $${recurringPrice}/month\njust by packaging it right.\n[Your Name]\n\nEMAIL 3 — DAY 3\nSubject: The $${monthlyTarget}/month formula\n\n${dailyTarget} customers x $${recurringPrice}/month = $${monthlyTarget}/month.\nYour gateway: ${gatewayProduct} at $${gatewayPrice}.\nReply YES if you want to know how.\n[Your Name]\n\nEMAIL 4 — DAY 5\nSubject: The #1 mistake ${audience} make\n\nThey wait until they are ready.\nYour ${skill} is already valuable enough.\nStart with one customer. Then ${dailyTarget}.\n[Your Name]\n\nEMAIL 5 — DAY 7\nSubject: One spot left this month\n\nOne spot available for ${audience} who want\n$${monthlyTarget}/month from their ${skill}.\n→ ${gatewayProduct} — $${gatewayPrice}\n[Your Name]\n\nnewmrr.com`,
+T — TELL THEM WHAT YOU DO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    'pricing-worksheet': `PRICING CALCULATOR WORKSHEET\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nYOUR NUMBERS\nAudience: ${audience}\nMonthly Target: $${monthlyTarget}\nCustomers Needed: ${dailyTarget}\n\nGATEWAY PRODUCT\n${gatewayProduct}: $${gatewayPrice}\nMargin: ~80%\nProfit per sale: $${Math.round(Number(gatewayPrice) * 0.8)}\n\nRECURRING MODEL\n${recurringModel}: $${recurringPrice}/mo\nAt ${dailyTarget} customers: $${monthlyTarget}/mo\nAnnual: $${Number(monthlyTarget) * 12}\n\nPRICE INCREASE SCENARIOS\n$${recurringPrice}/mo x ${dailyTarget} = $${monthlyTarget}/mo (current)\n$${Math.round(Number(recurringPrice)*1.25)}/mo x ${dailyTarget} = $${Math.round(Number(recurringPrice)*1.25*Number(dailyTarget))}/mo (+25%)\n$${Math.round(Number(recurringPrice)*1.5)}/mo x ${dailyTarget} = $${Math.round(Number(recurringPrice)*1.5*Number(dailyTarget))}/mo (+50%)\n\nPATH TO $1M/YEAR\nCustomers needed: ${Math.ceil(1000000/(Number(recurringPrice)*12))}\nProducts needed at ${dailyTarget} customers: ${Math.ceil(Math.ceil(1000000/(Number(recurringPrice)*12))/Number(dailyTarget))}\n\nnewmrr.com`,
+Script:
+"Hey [Name], I help ${audience} with ${skill}.
+I've been doing this for a while and I recently
+put together a [${entryOffer}] that gets
+people real results fast."
 
-    'product-stacking': `PRODUCT STACKING FRAMEWORK\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nYOUR 4-PRODUCT STACK\n\nPRODUCT 1 (Now — Entry Point)\n${gatewayProduct}\nPrice: $${gatewayPrice} one-time\nGoal: First sale within 30 days\n\nPRODUCT 2 (Month 2 — Recurring)\n${recurringModel}\nPrice: $${recurringPrice}/month\nGoal: Convert Product 1 buyers to MRR\n\nPRODUCT 3 (Month 4 — Premium)\nAdvanced ${skill} Intensive\nPrice: $${Math.round(Number(recurringPrice)*3)}-$${Math.round(Number(recurringPrice)*5)}\nGoal: High-ticket for best customers\n\nPRODUCT 4 (Month 6 — Scalable)\n${skill} Group Program\nPrice: $${Math.round(Number(gatewayPrice)*2)}-$${Math.round(Number(gatewayPrice)*4)}\nGoal: Serve more without more time\n\nFULL STACK REVENUE\nProduct 1 (${Math.round(Number(dailyTarget)/2)}/mo): $${Math.round(Number(dailyTarget)/2*Number(gatewayPrice))}/mo\nProduct 2 (${dailyTarget} customers): $${monthlyTarget}/mo\nProduct 3 (2/mo): $${Math.round(Number(recurringPrice)*4*2)}/mo\nProduct 4 (5/mo): $${Math.round(Number(gatewayPrice)*3*5)}/mo\n\nnewmrr.com`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    'exit-checklist': `EXIT READINESS CHECKLIST\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nFINANCIAL READINESS\n[ ] Clean books — separate business account\n[ ] Track MRR monthly (target: $${monthlyTarget}/mo)\n[ ] Document all revenue streams\n[ ] Know your churn rate\n[ ] Calculate LTV: $${recurringPrice} x avg months\n\nExit target MRR: $${Math.round(Number(monthlyTarget)*3)}\nEstimated exit value: $${Math.round(Number(monthlyTarget)*3*12*3).toLocaleString()}-$${Math.round(Number(monthlyTarget)*3*12*5).toLocaleString()}\n(3-5x annual revenue)\n\nBRAND EQUITY\n[ ] Own your customer email list\n[ ] Have documented case studies\n[ ] ${audience} know your name\n[ ] Testimonials collected\n[ ] Brand assets documented\n\nOPERATIONS\n[ ] ${skill} delivery documented\n[ ] Onboarding process written\n[ ] Customer templates created\n[ ] Refund policy documented\n\nMoran: "Build for the exit from day one."\n\nnewmrr.com`,
+A — ASK IF THEY WANT TO BE INVOLVED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    'email-flows': `7 EMAIL FLOWS FOR RECURRING REVENUE\nPersonalized for: ${skill}\nNewMRR Wealth Group\n${'='.repeat(40)}\n\nFLOW 1: WELCOME (New sub → First sale)\nTrigger: Joins email list\nGoal: Convert to ${gatewayProduct} at $${gatewayPrice}\nDay 0: Welcome + your story\nDay 1: The problem ${audience} face\nDay 3: Social proof\nDay 5: How ${gatewayProduct} works\nDay 7: CTA — $${gatewayPrice}\n\nFLOW 2: POST-PURCHASE (Buyer → Happy customer)\nTrigger: Buys ${gatewayProduct}\nGoal: Great experience + upsell to $${recurringPrice}/mo\nDay 0: You are in — here's what happens\nDay 2: Check in\nDay 5: Success tip for ${skill}\nDay 7: Introduce ${recurringModel}\n\nFLOW 3: ABANDONED CART\nTrigger: Visited payment page, no purchase\n30 min: "Did something go wrong?"\n6 hrs: Reminder of what they get\n24 hrs: "Last chance"\n\nFLOW 4: RECURRING UPSELL\nTrigger: 7 days after gateway purchase\nDay 7: "Ready for the next level?"\nDay 10: ${recurringModel} at $${recurringPrice}/mo\n\nFLOW 5: PROFIT MAKER\nTrigger: 30 days as member\nDay 30: Premium ${skill} offer\n\nFLOW 6: VIP REPEAT CUSTOMER\nTrigger: 90 days as customer\nDay 90: Special offer + testimonial ask\n\nFLOW 7: RE-ENGAGEMENT\nTrigger: No open in 60 days\nDay 0: "Still interested in ${skill}?"\nDay 7: "One more thing"\nDay 14: "Unsubscribing you now"\n\nEmail flows = 15-30% of total revenue.\n\nnewmrr.com`,
+Script:
+"Is ${skill} something you've been trying
+to improve? I'm looking for a few people
+to work with this month."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+G — GO FOR THE SMALLEST YES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Script:
+"Would it be okay if I sent you some info
+about the ${entryOffer}? It's $${gatewayPrice}
+and takes about [X time]. No pressure at all."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FOLLOW UP SEQUENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Day 1: Send the Connect script above
+Day 3: "Just checking in — did you get a
+        chance to look at the info I sent?"
+Day 7: "Last follow up — I have one spot
+        left this month for ${skill} work.
+        Want it?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR TARGET: ${dailyTarget} new customers/month
+YOUR MRR GOAL: $${monthlyTarget}/month
+
+The rule: Go for the smallest yes first.
+A conversation beats a pitch every time.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'gateway-checklist': `
+GATEWAY PRODUCT LAUNCH CHECKLIST
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+YOUR GATEWAY PRODUCT
+${entryOffer}
+Price: $${gatewayPrice}
+Target: ${audience}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+14 STEPS FROM ZERO TO FIRST PAID CUSTOMER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WEEK 1 — BUILD THE FOUNDATION
+
+[ ] 1. Write a one-sentence description of your
+       ${entryOffer} in plain English
+
+[ ] 2. Identify 20 specific ${audience} who
+       have the problem your skill solves
+
+[ ] 3. Set up a simple payment link for
+       $${gatewayPrice} (Stripe, Gumroad, or PayPal)
+
+[ ] 4. Write 3 bullet points of what they
+       get from your ${entryOffer}
+
+[ ] 5. Get one testimonial or case study
+       (even from free work counts)
+
+WEEK 2 — REACH OUT
+
+[ ] 6. Contact your first 5 prospects using
+       the Connect Script outreach script
+
+[ ] 7. Post once on the platform where your
+       ${audience} hangs out — teach something
+
+[ ] 8. Follow up with anyone who didn't respond
+       from step 6
+
+[ ] 9. Ask 3 people in your network if they
+       know anyone who needs ${skill} help
+
+[ ] 10. Pre-sell to at least 1 person before
+        you finalize the product
+
+WEEK 3 — DELIVER AND COLLECT PROOF
+
+[ ] 11. Deliver your ${entryOffer} to your
+        first paying customer
+
+[ ] 12. Ask for a testimonial immediately
+        after delivery
+
+[ ] 13. Document what worked and what didn't
+
+[ ] 14. Offer your ${recurringModel} at $${recurringPrice}/mo
+        to your first customer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR SUCCESS METRICS
+First sale target: Week 2
+First 3 customers: Week 4
+First MRR: Month 2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'prelaunch-playbook': `
+STACK THE DECK: PRE-LAUNCH PLAYBOOK
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+THE The Influence Method METHOD
+For launching your ${entryOffer}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE GOAL
+Launch your ${entryOffer} ($${gatewayPrice})
+to a warm audience who already wants it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PHASE 1: THE 1000
+(4 weeks before launch)
+
+Goal: Get 1,000 ${audience} aware of you
+
+Actions:
+[ ] Post 3x/week about ${skill} on LinkedIn/IG/TikTok
+[ ] Join 5 online communities where ${audience} gather
+[ ] Comment value on 10 posts/day in those communities
+[ ] Start collecting emails — even 100 is enough to launch
+
+Content angles for ${skill}:
+→ "The #1 mistake ${audience} make with [topic]"
+→ "How I helped a client with ${skill} get [result]"
+→ "3 things I wish I knew about ${skill}"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PHASE 2: THE 10
+(2 weeks before launch)
+
+Goal: Find 10 micro-influencers or power connectors
+
+Actions:
+[ ] Identify 10 people with audiences of ${audience}
+[ ] Use Connect Script to reach out to each one
+[ ] Offer them free access to ${entryOffer}
+    in exchange for an honest post on launch day
+[ ] Brief them: what it is, who it's for, the price
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PHASE 3: THE 1
+(Launch week)
+
+Goal: Create a launch moment
+
+Actions:
+[ ] Email your list the day before: "Tomorrow is the day"
+[ ] Post on every platform launch morning
+[ ] Have your 10 partners post simultaneously
+[ ] Respond to every comment and DM personally
+[ ] Follow up with everyone who clicked but didn't buy
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR LAUNCH TARGET
+First 48 hours: 3 sales of ${entryOffer}
+First 30 days: ${dailyTarget} customers
+MRR target: $${monthlyTarget}/month
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'email-sequence': `
+5-EMAIL WELCOME SEQUENCE
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+Use these emails after someone signs up for
+your list or buys your ${entryOffer}.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EMAIL 1 — DAY 0 (Immediate)
+Subject: You're in — here's what happens next
+
+Hey [First Name],
+
+Welcome. You just made a great decision.
+
+I help ${audience} with ${skill} — and over
+the next 7 days I'm going to show you exactly
+how this works.
+
+Tomorrow I'll share why most ${audience}
+are leaving money on the table with ${skill}.
+
+Talk soon,
+[Your Name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EMAIL 2 — DAY 1
+Subject: The ${skill} mistake costing you money
+
+Hey [First Name],
+
+Most ${audience} make the same mistake
+with ${skill}: they undercharge.
+
+The market for ${skill} is bigger than
+you think. I've seen ${audience} go from
+charging nothing to $${recurringPrice}/month
+just by packaging it right.
+
+Tomorrow I'll show you the exact model.
+
+[Your Name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EMAIL 3 — DAY 3
+Subject: The $${monthlyTarget}/month formula
+
+Hey [First Name],
+
+Here's the math that changed everything for me:
+
+${dailyTarget} customers × $${recurringPrice}/month
+= $${monthlyTarget}/month
+
+That's it. No complicated systems.
+Just ${dailyTarget} people who pay you monthly
+for your ${skill} expertise.
+
+Your entry offer — ${entryOffer}
+at $${gatewayPrice} — is how you get there.
+
+Reply "YES" if you want to know how.
+
+[Your Name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EMAIL 4 — DAY 5
+Subject: The #1 mistake I see ${audience} make
+
+Hey [First Name],
+
+They wait until they're "ready."
+
+There's no ready. There's only:
+do the thing, get feedback, improve.
+
+Your ${skill} is already valuable enough.
+The ${audience} who need you are already
+out there looking.
+
+Start with one customer. Then two.
+Then ${dailyTarget}.
+
+[Your Name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EMAIL 5 — DAY 7
+Subject: One spot left this month
+
+Hey [First Name],
+
+I have one spot available this month for
+${audience} who want to turn their ${skill}
+into $${monthlyTarget}/month.
+
+If that's you, here's the next step:
+→ ${entryOffer} — $${gatewayPrice}
+
+This is the fastest path I know.
+
+[Your Name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'pricing-worksheet': `
+PRICING CALCULATOR WORKSHEET
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+YOUR NUMBERS
+Target Audience: ${audience}
+Monthly Target: $${monthlyTarget}
+Customers Needed: ${dailyTarget}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR CURRENT PRICING STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GATEWAY PRODUCT (Entry Point)
+Name: ${entryOffer}
+Current Price: $${gatewayPrice}
+Margin: ~80% (service-based)
+Profit per sale: $${Math.round(Number(gatewayPrice) * 0.8)}
+
+RECURRING MODEL (MRR Engine)  
+Name: ${recurringModel}
+Current Price: $${recurringPrice}/mo
+Monthly at ${dailyTarget} customers: $${monthlyTarget}
+Annual at ${dailyTarget} customers: $${Number(monthlyTarget) * 12}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MORAN'S $30 SWEET SPOT ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The rule: Price at the right price point for meaningful margins.
+You're at $${recurringPrice}/mo — well above the floor.
+
+Price increase scenarios:
+$${recurringPrice}/mo × ${dailyTarget} customers = $${monthlyTarget}/mo
+$${Math.round(Number(recurringPrice) * 1.25)}/mo × ${dailyTarget} customers = $${Math.round(Number(recurringPrice) * 1.25 * Number(dailyTarget))}/mo (+25%)
+$${Math.round(Number(recurringPrice) * 1.5)}/mo × ${dailyTarget} customers = $${Math.round(Number(recurringPrice) * 1.5 * Number(dailyTarget))}/mo (+50%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PATH TO $1M/YEAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+At your current pricing:
+Customers needed for $1M/year:
+= $1,000,000 / ($${recurringPrice} × 12)
+= ${Math.ceil(1000000 / (Number(recurringPrice) * 12))} customers
+
+Products needed at ${dailyTarget} customers each:
+= ${Math.ceil(Math.ceil(1000000 / (Number(recurringPrice) * 12)) / Number(dailyTarget))} products
+
+This is Moran's stacking principle in action.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'product-stacking': `
+PRODUCT STACKING FRAMEWORK
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+YOUR CURRENT STACK
+Product 1: ${entryOffer} ($${gatewayPrice})
+Recurring: ${recurringModel} ($${recurringPrice}/mo)
+Target Audience: ${audience}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE STACKING PRINCIPLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The rule: Don't find new audiences.
+Stack new products onto your existing one.
+
+Same ${audience}. New offers.
+Each product cross-sells to the same buyers.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+YOUR 4-PRODUCT STACK FOR ${skill.toUpperCase()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRODUCT 1 (Current — The Entry Point)
+${entryOffer}
+Price: $${gatewayPrice} one-time
+Goal: Get them in the door
+Target: First sale within 30 days
+
+PRODUCT 2 (Build next — The Recurring)
+${recurringModel}
+Price: $${recurringPrice}/month
+Goal: Convert Product 1 buyers to MRR
+Target: Launch to Product 1 buyers in Month 2
+
+PRODUCT 3 (Month 4 — The Premium)
+Advanced ${skill} Intensive / VIP Day
+Price: $${Math.round(Number(recurringPrice) * 3)}-$${Math.round(Number(recurringPrice) * 5)} one-time
+Goal: High-ticket offer for best customers
+Target: Top 10% of your recurring members
+
+PRODUCT 4 (Month 6 — The Scalable)
+${skill} Group Program or Course
+Price: $${Math.round(Number(gatewayPrice) * 2)}-$${Math.round(Number(gatewayPrice) * 4)}
+Goal: Serve more ${audience} without more time
+Target: Everyone who couldn't afford Product 3
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REVENUE AT FULL STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Product 1 sales (${Math.round(Number(dailyTarget) / 2)}/mo): $${Math.round(Number(dailyTarget) / 2 * Number(gatewayPrice))}/mo
+Product 2 MRR (${dailyTarget} customers): $${monthlyTarget}/mo
+Product 3 (2/mo): $${Math.round(Number(recurringPrice) * 4 * 2)}/mo
+Product 4 (5/mo): $${Math.round(Number(gatewayPrice) * 3 * 5)}/mo
+
+TOTAL: $${Math.round(Number(dailyTarget) / 2 * Number(gatewayPrice) + Number(monthlyTarget) + Number(recurringPrice) * 4 * 2 + Number(gatewayPrice) * 3 * 5).toLocaleString()}/mo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'exit-checklist': `
+EXIT READINESS CHECKLIST
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+Build a sellable ${skill} business from day one.
+The rule: Exit is the plan, not the bonus.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FINANCIAL READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Clean books — separate business bank account
+[ ] Track MRR monthly (target: $${monthlyTarget}/mo)
+[ ] Document all revenue streams
+[ ] Know your churn rate
+[ ] Calculate Customer Lifetime Value (LTV)
+    LTV = $${recurringPrice} × avg months retained
+
+Current target MRR: $${monthlyTarget}
+Exit-ready MRR: $${Math.round(Number(monthlyTarget) * 3)} (3x current target)
+Estimated exit value: $${Math.round(Number(monthlyTarget) * 3 * 12 * 3)}-$${Math.round(Number(monthlyTarget) * 3 * 12 * 5)}
+(3-5x annual revenue for service brands)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BRAND EQUITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Own your customer email list (not just social)
+[ ] Have documented case studies with real numbers
+[ ] ${audience} know your name, not just your service
+[ ] Testimonials collected and stored
+[ ] Brand assets (logo, colors, voice guide) documented
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPERATIONAL SYSTEMS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] ${skill} delivery is documented (can someone else do it?)
+[ ] Onboarding process written down step by step
+[ ] Customer communication templates created
+[ ] Cancellation and refund policy documented
+[ ] Tools and software list documented
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AUDIENCE ASSETS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Email list size and open rate documented
+[ ] Social following numbers tracked monthly
+[ ] Repeat customer rate tracked
+[ ] Referral source tracked
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MORAN'S EXIT ADVICE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Build for the exit from day one.
+ Do nothing with the proceeds for 6 months.
+ Keep it liquid."
+
+Your ${skill} business is sellable when:
+✓ Revenue is predictable and documented
+✓ The business runs without just you
+✓ Customers come back without being asked
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
+
+    'email-flows': `
+7 EMAIL FLOWS FOR RECURRING REVENUE
+Personalized for: ${skill}
+Prepared by NewMRR Wealth Group
+=====================================
+
+YOUR BUSINESS
+Skill: ${skill}
+Audience: ${audience}
+Gateway: ${entryOffer} ($${gatewayPrice})
+Recurring: ${recurringModel} ($${recurringPrice}/mo)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 1: WELCOME SERIES
+(New subscriber → First sale)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: Someone joins your email list
+Emails: 5 emails over 7 days
+Goal: Convert to ${entryOffer} at $${gatewayPrice}
+
+Day 0: Welcome + your story with ${skill}
+Day 1: The problem ${audience} face (that you solve)
+Day 3: Social proof — result you got for someone
+Day 5: How ${entryOffer} works
+Day 7: CTA — "Ready to start? $${gatewayPrice}"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 2: POST-PURCHASE
+(Buyer → Happy customer → Testimonial)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: Purchases ${entryOffer}
+Emails: 4 emails over delivery period
+Goal: Great experience + upsell to recurring
+
+Day 0: "You're in — here's what happens next"
+Day 2: Check in — "How is it going so far?"
+Day 5: Success tip related to ${skill}
+Day 7: Introduce ${recurringModel} at $${recurringPrice}/mo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 3: ABANDONED CART
+(Clicked but didn't buy → Recovery)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: Visited payment page, no purchase
+Emails: 3 emails over 48 hours
+Goal: Recover the sale
+
+30 min: "Did something go wrong?"
+6 hrs: Reminder of what they get
+24 hrs: "Last chance — [your story]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 4: RECURRING UPSELL
+(Gateway buyer → MRR customer)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: 7 days after gateway purchase
+Emails: 2 emails
+Goal: Convert to ${recurringModel}
+
+Day 7: "Ready for the next level?"
+Day 10: Final offer — ${recurringModel} at $${recurringPrice}/mo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 5: PROFIT MAKER
+(MRR customer → Premium offer)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: 30 days as recurring member
+Emails: 1-2 emails
+Goal: Upsell to higher-ticket ${skill} offer
+
+Day 30: VIP/intensive offer introduction
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 6: REPEAT CUSTOMER VIP
+(Best customers → Raving fans)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: 90 days as paying customer
+Emails: 1-2 emails
+Goal: Testimonial, referral, UGC
+
+Day 90: "You've been with us 90 days —
+         here's something special"
+Ask: "Would you share your experience?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FLOW 7: RE-ENGAGEMENT
+(Inactive → Win back or remove)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Trigger: No open in 60 days
+Emails: 3 emails
+Goal: Re-engage or clean list
+
+Day 0: "We miss you — still interested in ${skill}?"
+Day 7: "One more thing before we part ways"
+Day 14: "Goodbye — unsubscribing you now"
+         (this email has highest open rate)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Email flows = 15-30% of total revenue.
+Set these up once. They run forever.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generated by NewMRR Wealth Group
+newmrr.com
+`,
   }
 
   return resources[resource] || 'Resource not found'
@@ -26,21 +657,26 @@ function generateContent(resource: string, data: Record<string, string>): string
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
-  const resource = searchParams.get('resource') || ''
-  const data: Record<string, string> = {
-    skill: searchParams.get('skill') || 'Your Skill',
-    audience: searchParams.get('audience') || 'Your Audience',
-    gatewayProduct: searchParams.get('gatewayProduct') || 'Your Gateway Product',
-    gatewayPrice: searchParams.get('gatewayPrice') || '197',
-    recurringModel: searchParams.get('recurringModel') || 'Your Recurring Model',
-    recurringPrice: searchParams.get('recurringPrice') || '97',
-    phase: searchParams.get('phase') || 'grind',
-    monthlyTarget: searchParams.get('monthlyTarget') || '5000',
-    dailyTarget: searchParams.get('dailyTarget') || '25',
+  const resource = searchParams.get('resource')
+  const skill = searchParams.get('skill') || 'Your Skill'
+  const audience = searchParams.get('audience') || 'Your Audience'
+  const entryOffer = searchParams.get('entryOffer') || 'Your Entry Offer'
+  const gatewayPrice = searchParams.get('gatewayPrice') || '197'
+  const recurringModel = searchParams.get('recurringModel') || 'Your Recurring Model'
+  const recurringPrice = searchParams.get('recurringPrice') || '97'
+  const phase = searchParams.get('phase') || 'foundation'
+  const monthlyTarget = searchParams.get('monthlyTarget') || '5000'
+  const dailyTarget = searchParams.get('dailyTarget') || '25'
+
+  if (!resource) {
+    return NextResponse.json({ error: 'Resource required' }, { status: 400 })
   }
 
+  const data = { skill, audience, entryOffer, gatewayPrice, recurringModel, recurringPrice, phase, name: skill, monthlyTarget, dailyTarget }
   const content = generateContent(resource, data)
-  const filename = `newmrr-${resource}-${data.skill.toLowerCase().replace(/\s+/g, '-')}.txt`
+
+  // Return as downloadable text file
+  const filename = `newmrr-${resource}-${skill.toLowerCase().replace(/\s+/g, '-')}.txt`
 
   return new NextResponse(content, {
     headers: {

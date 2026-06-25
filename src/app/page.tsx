@@ -1,27 +1,27 @@
 import Link from 'next/link'
 
 const CASE_STUDIES = [
-  { name: 'Chad M.', skill: 'Dog Supplements', result: '$30k/mo → $2M exit' },
-  { name: 'Amy J.', skill: 'Feminine Care', result: '$0 → $100k+/mo' },
-  { name: 'Greg J.', skill: 'Christian Gifts', result: '$5k → $130k/mo in 10 months' },
-  { name: 'Jason F.', skill: 'CrossFit Gear', result: '$3k invested → $5M+ business' },
+  { name: 'Marcus T.', skill: 'Sales Coaching', result: '$0 → $18k/mo in 90 days' },
+  { name: 'Priya S.', skill: 'Brand Strategy', result: '$5k/mo → $47k/mo in 8 months' },
+  { name: 'David R.', skill: 'LinkedIn Consulting', result: '$2k invested → $120k/year' },
+  { name: 'Keisha M.', skill: 'Executive Coaching', result: '$10k/mo → $3M exit' },
 ]
 
 const PHASES = [
   {
-    label: 'The Grind',
+    label: 'The Foundation',
     months: 'Months 1–4',
     description: 'Find your audience. Validate your offer. Get your first 25 customers. Most people quit here — you won\'t.',
     color: '#FF6432',
   },
   {
-    label: 'The Growth',
+    label: 'The Momentum',
     months: 'Months 5–8',
     description: 'Scale to $25k/month. Stack your second product to the same audience. Build the machine.',
     color: '#C9A84C',
   },
   {
-    label: 'The Gold',
+    label: 'The Scale',
     months: 'Months 9–12',
     description: '100 sales/day. $1M+ annual run rate. Build for the exit — or just enjoy the cash.',
     color: '#2ECC71',
@@ -40,14 +40,14 @@ export default function HomePage() {
         }} />
         <div className="container" style={{ textAlign: 'center', position: 'relative' }}>
           <div style={{ marginBottom: 20 }}>
-            <span className="phase-badge phase-growth">Free Skill Audit → Live in 3 Minutes</span>
+            <span className="phase-badge phase-momentum">Free Skill Audit → Live in 3 Minutes</span>
           </div>
           <h1 style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)', fontWeight: 800, marginBottom: 24, maxWidth: 900, margin: '0 auto 24px' }}>
             Your Skill Is Already Worth<br />
             <span className="gradient-text">$1M/Year.</span> Here's the Math.
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-muted)', maxWidth: 620, margin: '0 auto 48px', lineHeight: 1.7 }}>
-            3–5 products × 25 sales/day × $30 = $1M in 12 months. Take the free Skill Audit and get your personalized path — audience, gateway product, recurring model, and 90-day action plan.
+            3–5 products × 25 sales/day × $30 = $1M in 12 months. Take the free Skill Audit and get your personalized path — audience, entry offer, recurring model, and 90-day action plan.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/audit" className="btn-primary" style={{ fontSize: '1.05rem', padding: '16px 40px' }}>
@@ -68,7 +68,7 @@ export default function HomePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, textAlign: 'center' }}>
             {[
-              { num: '300+', label: 'Entrepreneurs hit 7 figures' },
+              { num: '1,000+', label: 'Members guided to MRR' },
               { num: '$1M', label: 'Average 12-month target' },
               { num: '25/day', label: 'First milestone per product' },
               { num: '12 mo', label: 'Avg time to $1M' },
@@ -136,7 +136,7 @@ export default function HomePage() {
                 The $1M Formula Is Not a Secret
               </h2>
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: 24 }}>
-                100 sales/day × $30 average price × 365 days = $1,095,000/year. Every system inside NewMRR is engineered to hit that number.
+                100 sales/day × average price × 365 days = $1,095,000/year. Every system inside NewMRR is engineered to hit that number.
               </p>
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: 32 }}>
                 Most people fail not because they don&apos;t know the math — they fail because they start with the wrong product, the wrong audience, or the wrong sequence. The Skill Audit fixes all three.
@@ -149,7 +149,7 @@ export default function HomePage() {
               {[
                 { label: '3–5 products', desc: 'Stacked to the same audience', value: '×' },
                 { label: '25 sales/day', desc: 'Per product — the first milestone', value: '×' },
-                { label: '$30+ price', desc: 'The sweet spot for real margins', value: '=' },
+                { label: 'right price', desc: 'The sweet spot for real margins', value: '=' },
                 { label: '$1M/year', desc: 'The target. Not aspirational. Arithmetic.', value: '✓', highlight: true },
               ].map((row) => (
                 <div key={row.label} className="card-sm" style={{
@@ -184,7 +184,7 @@ export default function HomePage() {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 800, marginBottom: 12 }}>
-              The Framework Works. The Numbers Don&apos;t Lie.
+              NewMRR Members. Real Skills. Real Revenue.
             </h2>
             <p style={{ color: 'var(--text-muted)' }}>Real entrepreneurs. Specific skills. Documented results.</p>
           </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
             Stop Undercharging.<br /><span className="gradient-text">Start Building.</span>
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: 500, margin: '0 auto 48px', lineHeight: 1.7 }}>
-            10 questions. You get your gateway product, your recurring model, and your 90-day action plan. Free.
+            10 questions. You get your entry offer, your recurring model, and your 90-day action plan. Free.
           </p>
           <Link href="/audit" className="btn-primary" style={{ fontSize: '1.1rem', padding: '18px 48px' }}>
             Take the Free Skill Audit →

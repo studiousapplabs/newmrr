@@ -11,22 +11,35 @@ export async function cleanAuditLanguage(rawAnswers: {
   dashboardHeadline: string
   audienceLabel: string
 }> {
-  const prompt = `You are a business positioning expert. Transform these raw audit answers into professional business language.
+  const skillSummary = rawAnswers.skill.length > 80
+    ? rawAnswers.skill.substring(0, 80) + '...'
+    : rawAnswers.skill
 
-RAW ANSWERS:
-- Skill: "${rawAnswers.skill}"
-- Audience: "${rawAnswers.audience}"
-- Delivery: "${rawAnswers.delivery}"
-- Outcome: "${rawAnswers.outcome}"
-- Price comfort: "${rawAnswers.priceComfort}"
+  const prompt = `You are a sharp business brand strategist. Distill raw descriptions into crisp professional labels.
 
-Respond ONLY with valid JSON, no markdown, no explanation:
+CRITICAL RULES:
+- NEVER copy the person's words directly into the output
+- ALWAYS create a fresh, professional 2-4 word title capturing the ESSENCE of what they do
+- Think: if this person had a business card, what would their title say?
+- "Sales Coach" beats "Creating sales processes consultant"
+
+WHAT THEY DO: "${skillSummary}"
+WHO THEY SERVE: "${rawAnswers.audience}"
+HOW THEY DELIVER: "${rawAnswers.delivery}"
+OUTCOME THEY CREATE: "${rawAnswers.outcome}"
+
+Distillation examples:
+- "I help people build websites and brand themselves online" becomes "Brand & Web Consultant"
+- "Creating the flow of a new company from beginning to end on branding and sales" becomes "Business Launch Consultant"
+- "I coach executives on leadership and communication" becomes "Executive Leadership Coach"
+
+Respond ONLY with valid JSON, no markdown:
 {
-  "skillLabel": "2-4 word professional title e.g. Sales Coach or Brand Strategist",
-  "gatewayProductName": "3-6 word entry offer name e.g. 90-Minute Strategy Session",
-  "recurringModelName": "3-6 word monthly offer name e.g. Monthly Revenue Coaching",
-  "dashboardHeadline": "One punchy sentence under 12 words about what they help clients achieve",
-  "audienceLabel": "2-4 word ideal client description e.g. Early-Stage Founders"
+  "skillLabel": "2-4 word professional title distilled from their description",
+  "gatewayProductName": "3-5 word premium entry offer name",
+  "recurringModelName": "3-5 word monthly recurring offer name",
+  "dashboardHeadline": "One punchy sentence under 10 words about client outcomes",
+  "audienceLabel": "2-3 word ideal client label"
 }`
 
   try {
@@ -48,15 +61,15 @@ Respond ONLY with valid JSON, no markdown, no explanation:
     const clean = content.replace(/```json|```/g, '').trim()
     const parsed = JSON.parse(clean)
     return {
-      skillLabel: parsed.skillLabel || rawAnswers.skill.split(' ').slice(0,3).join(' ') + ' Consultant',
+      skillLabel: parsed.skillLabel || rawAnswers.skill.split(' ').slice(0, 3).join(' ') + ' Consultant',
       gatewayProductName: parsed.gatewayProductName || 'Strategy Session',
-      recurringModelName: parsed.recurringModelName || 'Monthly Coaching',
-      dashboardHeadline: parsed.dashboardHeadline || 'Turn your skill into monthly recurring revenue.',
+      recurringModelName: parsed.recurringModelName || 'Monthly Coaching Retainer',
+      dashboardHeadline: parsed.dashboardHeadline || 'Turn your expertise into monthly recurring revenue.',
       audienceLabel: parsed.audienceLabel || rawAnswers.audience,
     }
   } catch {
     return {
-      skillLabel: rawAnswers.skill.split(' ').slice(0,3).join(' ') + ' Consultant',
+      skillLabel: rawAnswers.skill.split(' ').slice(0, 3).join(' ') + ' Consultant',
       gatewayProductName: 'Strategy Session',
       recurringModelName: 'Monthly Coaching Retainer',
       dashboardHeadline: 'Turn your expertise into monthly recurring revenue.',
