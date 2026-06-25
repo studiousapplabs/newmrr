@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe, PRODUCTS } from '@/lib/stripe'
+import Stripe from 'stripe'
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,30 +13,25 @@ export async function POST(req: NextRequest) {
 
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 
-    const sessionConfig: Parameters<typeof stripe.checkout.sessions.create>[0] = {
-      payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: productConfig.name,
-              description: productConfig.description,
-              metadata: {
-                skill_category: auditResult?.skillCategory || '',
-                monthly_potential: auditResult?.monthlyRevenuePotential?.toString() || '',
-              },
-            },
-            ...(productConfig.mode === 'subscription'
-              ? {
-                  unit_amount: productConfig.price,
-                  recurring: { interval: 'month' },
-                }
-              : { unit_amount: productConfig.price }),
-          },
-          quantity: 1,
+    const lineItem: Stripe.Checkout.SessionCreateParams.LineItem = {
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: productConfig.name,
+          description: productConfig.description,
         },
-      ],
+        ...(productConfig.mode === 'subscription'
+          ? {
+              unit_amount: productConfig.price,
+              recurring: { interval: 'month' },
+            }
+          : { unit_amount: productConfig.price }),
+      },
+      quantity: 1,
+    }
+
+    const sessionConfig: Stripe.Checkout.SessionCreateParams = {
+      line_items: [lineItem],
       mode: productConfig.mode,
       success_url: `${appUrl}/dashboard?session_id={CHECKOUT_SESSION_ID}&product=${product}`,
       cancel_url: `${appUrl}/results`,
@@ -43,6 +39,8 @@ export async function POST(req: NextRequest) {
         product,
         skill_label: auditResult?.skillLabel || '',
         phase: auditResult?.phase || '',
+        skill_category: auditResult?.skillCategory || '',
+        monthly_potential: auditResult?.monthlyRevenuePotential?.toString() || '',
       },
     }
 
