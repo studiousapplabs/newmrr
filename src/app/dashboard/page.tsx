@@ -38,7 +38,7 @@ function DashboardContent() {
   const toMillion = Math.max(0, 1000000 - annualRevenue)
   const progressToMillion = Math.min(100, (annualRevenue / 1000000) * 100)
 
-  const phaseColors: Record<string, string> = { grind: '#FF6432', growth: '#C9A84C', gold: '#2ECC71' }
+  const phaseColors: Record<string, string> = { foundation: '#FF6432', momentum: '#C9A84C', scale: '#2ECC71' }
   const phaseColor = result ? phaseColors[result.phase] : '#C9A84C'
 
   function getDownloadUrl(resourceId: string) {

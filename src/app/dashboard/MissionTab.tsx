@@ -60,7 +60,7 @@ export default function MissionTab({ result, biggestBlock }: { result: AuditResu
     fetchMission(w)
   }
 
-  const phaseColors: Record<string, string> = { grind: '#FF6432', growth: '#C9A84C', gold: '#2ECC71' }
+  const phaseColors: Record<string, string> = { foundation: '#FF6432', momentum: '#C9A84C', scale: '#2ECC71' }
   const phaseColor = result ? phaseColors[result.phase] : '#C9A84C'
 
   if (loading) {

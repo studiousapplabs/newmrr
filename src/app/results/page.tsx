@@ -88,7 +88,7 @@ export default function ResultsPage() {
 
   if (!result) return null
 
-  const phaseColors = { grind: '#FF6432', growth: '#C9A84C', gold: '#2ECC71' }
+  const phaseColors: Record<string, string> = { foundation: '#FF6432', momentum: '#C9A84C', scale: '#2ECC71' }
   const phaseColor = phaseColors[result.phase]
 
   return (

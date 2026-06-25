@@ -1,6 +1,6 @@
 // THE NEWMRR MISSION ENGINE
 // 16 tracks × 12 weeks = 192 unique weekly missions
-// Driven by: phase (grind/growth/gold) + biggest block
+// Driven by: phase (foundation/momentum/scale) + biggest block
 
 export interface Mission {
   week: number
