@@ -1308,7 +1308,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
       {
         week: 6,
         title: 'Run Your First Live Event',
-        why: 'At The Scale phase, live events create the deepest relationships with your audience. Your live event doesn't need to be 500 people — even a 25-person event creates the kind of connection that turns attendees into long-term customers and advocates.',
+        why: 'At The Scale phase, live events create the deepest relationships with your audience. Your live event does not need to be 500 people — even a 25-person event creates the kind of connection that turns attendees into long-term customers and advocates.',
         action: 'Plan a half-day or full-day event for your best clients and top prospects. Mix education (your methodology) with community (client roundtables) and celebration (client spotlights). Make attendance feel exclusive.',
         script: '"I\'m hosting [Event Name] — a half-day exclusive event for [your audience]. [X] spots only. Agenda: [morning topic], [lunch], [afternoon topic], [networking]. Investment: $[price] or complimentary for [your clients]. Apply at [link]."',
         whenItWorks: 'Attendees form relationships with each other and with you that last years. The event becomes an annual fixture. The brand association with the event elevates your positioning.',
