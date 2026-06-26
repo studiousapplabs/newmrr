@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const token_hash = requestUrl.searchParams.get('token_hash')
   const type = requestUrl.searchParams.get('type')
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -16,8 +16,8 @@ export async function GET(request: NextRequest) {
     {
       cookies: {
         get(name: string) { return cookieStore.get(name)?.value },
-        set(name: string, value: string, options: object) { cookieStore.set({ name, value, ...options }) },
-        remove(name: string, options: object) { cookieStore.set({ name, value: '', ...options }) },
+        set(name: string, value: string, options: object) { cookieStore.set({ name, value, ...options } as Parameters<typeof cookieStore.set>[0]) },
+        remove(name: string, options: object) { cookieStore.set({ name, value: '', ...options } as Parameters<typeof cookieStore.set>[0]) },
       },
     }
   )
