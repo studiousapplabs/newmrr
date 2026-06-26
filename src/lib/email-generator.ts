@@ -10,6 +10,7 @@ interface LeadData {
   result_timeframe?: string
   biggest_win?: string
   current_acquisition?: string
+  delivery?: string
   groq_skill_label?: string
   groq_gateway_product?: string
   monthly_potential?: number
