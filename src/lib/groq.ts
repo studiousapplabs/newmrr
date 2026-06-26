@@ -4,6 +4,12 @@ export async function cleanAuditLanguage(rawAnswers: {
   delivery: string
   priceComfort: string
   outcome: string
+  dreamClient?: string
+  clientProblem?: string
+  industry?: string
+  niche?: string
+  biggestWin?: string
+  resultTimeframe?: string
 }): Promise<{
   skillLabel: string
   gatewayProductName: string
@@ -11,35 +17,46 @@ export async function cleanAuditLanguage(rawAnswers: {
   dashboardHeadline: string
   audienceLabel: string
 }> {
-  const skillSummary = rawAnswers.skill.length > 80
-    ? rawAnswers.skill.substring(0, 80) + '...'
+  const skillSummary = rawAnswers.skill.length > 100
+    ? rawAnswers.skill.substring(0, 100) + '...'
     : rawAnswers.skill
+
+  const context = [
+    rawAnswers.industry && `Industry: ${rawAnswers.industry}`,
+    rawAnswers.niche && `Niche: ${rawAnswers.niche}`,
+    rawAnswers.dreamClient && `Dream client: ${rawAnswers.dreamClient.substring(0, 80)}`,
+    rawAnswers.outcome && `Result they deliver: ${rawAnswers.outcome.substring(0, 80)}`,
+    rawAnswers.resultTimeframe && `Timeframe: ${rawAnswers.resultTimeframe}`,
+    rawAnswers.biggestWin && `Biggest win: ${rawAnswers.biggestWin.substring(0, 80)}`,
+  ].filter(Boolean).join('\n')
 
   const prompt = `You are a sharp business brand strategist. Distill raw descriptions into crisp professional labels.
 
 CRITICAL RULES:
 - NEVER copy the person's words directly into the output
-- ALWAYS create a fresh, professional 2-4 word title capturing the ESSENCE of what they do
-- Think: if this person had a business card, what would their title say?
-- "Sales Coach" beats "Creating sales processes consultant"
+- Create a fresh, professional 2-4 word title capturing the ESSENCE of what they do
+- Think: business card title. What would it say?
+- Specific beats generic. "SaaS Sales Coach" beats "Sales Coach"
 
 WHAT THEY DO: "${skillSummary}"
 WHO THEY SERVE: "${rawAnswers.audience}"
 HOW THEY DELIVER: "${rawAnswers.delivery}"
-OUTCOME THEY CREATE: "${rawAnswers.outcome}"
+ADDITIONAL CONTEXT:
+${context}
 
 Distillation examples:
-- "I help people build websites and brand themselves online" becomes "Brand & Web Consultant"
-- "Creating the flow of a new company from beginning to end on branding and sales" becomes "Business Launch Consultant"
-- "I coach executives on leadership and communication" becomes "Executive Leadership Coach"
+- "I help companies with their go-to-market strategy and sales" + SaaS industry = "SaaS GTM Strategist"
+- "I help new moms get their body back after having a baby" + fitness = "Postpartum Fitness Coach"
+- "Creating the flow of a new company from beginning to end on branding and sales" + consulting = "Business Launch Consultant"
+- "I write email campaigns for e-commerce brands" + e-commerce = "E-Commerce Email Strategist"
 
 Respond ONLY with valid JSON, no markdown:
 {
-  "skillLabel": "2-4 word professional title distilled from their description",
-  "gatewayProductName": "3-5 word premium entry offer name",
-  "recurringModelName": "3-5 word monthly recurring offer name",
-  "dashboardHeadline": "One punchy sentence under 10 words about client outcomes",
-  "audienceLabel": "2-3 word ideal client label"
+  "skillLabel": "2-4 word professional title — distilled, NOT copied from their description",
+  "gatewayProductName": "3-5 word premium entry offer name specific to their skill",
+  "recurringModelName": "3-5 word monthly recurring offer name specific to their skill",
+  "dashboardHeadline": "One punchy sentence under 10 words about the specific outcome they create",
+  "audienceLabel": "2-3 word ideal client label specific to their niche"
 }`
 
   try {
@@ -61,7 +78,7 @@ Respond ONLY with valid JSON, no markdown:
     const clean = content.replace(/```json|```/g, '').trim()
     const parsed = JSON.parse(clean)
     return {
-      skillLabel: parsed.skillLabel || rawAnswers.skill.split(' ').slice(0, 3).join(' ') + ' Consultant',
+      skillLabel: parsed.skillLabel || 'Business Consultant',
       gatewayProductName: parsed.gatewayProductName || 'Strategy Session',
       recurringModelName: parsed.recurringModelName || 'Monthly Coaching Retainer',
       dashboardHeadline: parsed.dashboardHeadline || 'Turn your expertise into monthly recurring revenue.',
@@ -69,7 +86,7 @@ Respond ONLY with valid JSON, no markdown:
     }
   } catch {
     return {
-      skillLabel: rawAnswers.skill.split(' ').slice(0, 3).join(' ') + ' Consultant',
+      skillLabel: 'Business Consultant',
       gatewayProductName: 'Strategy Session',
       recurringModelName: 'Monthly Coaching Retainer',
       dashboardHeadline: 'Turn your expertise into monthly recurring revenue.',
