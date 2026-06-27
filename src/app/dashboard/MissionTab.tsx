@@ -11,7 +11,7 @@ interface Mission {
   script: string
   whenItWorks: string
   whenItDoesnt: string
-  moranPrinciple: string
+  newmrrPrinciple: string
   metric: string
 }
 
@@ -60,7 +60,7 @@ export default function MissionTab({ result, biggestBlock }: { result: AuditResu
     fetchMission(w)
   }
 
-  const phaseColors: Record<string, string> = { foundation: '#FF6432', momentum: '#C9A84C', scale: '#2ECC71' }
+  const phaseColors: Record<string, string> = { grind: '#FF6432', growth: '#C9A84C', gold: '#2ECC71' }
   const phaseColor = result ? phaseColors[result.phase] : '#C9A84C'
 
   if (loading) {
@@ -149,8 +149,8 @@ export default function MissionTab({ result, biggestBlock }: { result: AuditResu
           marginBottom: 4,
         }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.7 }}>
-            <strong style={{ color: phaseColor }}>Moran's Principle: </strong>
-            {mission.moranPrinciple}
+            <strong style={{ color: phaseColor }}>NewMRR Principle: </strong>
+            {mission.newmrrPrinciple}
           </p>
         </div>
       </div>

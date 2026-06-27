@@ -1,6 +1,6 @@
 // THE NEWMRR MISSION ENGINE
 // 16 tracks × 12 weeks = 192 unique weekly missions
-// Driven by: phase (foundation/momentum/scale) + biggest block
+// Driven by: phase (grind/growth/gold) + biggest block
 
 export interface Mission {
   week: number
@@ -10,7 +10,7 @@ export interface Mission {
   script: string
   whenItWorks: string
   whenItDoesnt: string
-  moranPrinciple: string
+  newmrrPrinciple: string
   metric: string
 }
 
@@ -43,7 +43,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m working on how I describe what I do. Does this make sense to you? \'I help [your audience] to [your outcome] in [timeframe] without [their fear].\' Would you buy this if you needed it?"',
         whenItWorks: 'They say yes or suggest a small tweak. Lock in the sentence. Put it everywhere — bio, email signature, DMs. This is your pitch.',
         whenItDoesnt: 'They\'re confused. Ask them: "What part lost you?" Their confusion is your gold. Fix the one word that confused them and you\'ll double your conversions.',
-        moranPrinciple: 'Audience First — clarity about who you serve and what they get is the foundation of everything.',
+        newmrrPrinciple: 'Audience First — clarity about who you serve and what they get is the foundation of everything.',
         metric: 'One clear sentence that 3 people understood without follow-up questions.',
       },
       {
@@ -54,7 +54,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'ve raised my price to $[new price] because I realized I was undervaluing the outcome. The old price attracted people who didn\'t take it seriously. The new price attracts people who do."',
         whenItWorks: 'Someone pays the new price without negotiating. That\'s your real customer. Serve them exceptionally.',
         whenItDoesnt: 'Someone says it\'s too expensive. Ask: "What would make it worth it?" Their answer is your next product feature.',
-        moranPrinciple: 'Premium pricing is a strategy, not a risk. Higher price = better customer = better results = better testimonials.',
+        newmrrPrinciple: 'Premium pricing is a strategy, not a risk. Higher price = better customer = better results = better testimonials.',
         metric: 'Gateway product priced at $97 minimum with 3 clear outcome bullet points written.',
       },
       {
@@ -65,7 +65,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m building out my business and I\'d love to feature your story. In one or two sentences — what changed for you after [what you did for them]? Even a quick voice note works."',
         whenItWorks: 'You get a real quote with a real result. Put it on your payment page immediately. This single quote will make you more money than any ad.',
         whenItDoesnt: 'They don\'t respond. Follow up once: "Even one sentence would mean the world." If still nothing, move on. The next person will.',
-        moranPrinciple: 'Social proof is the first review. 100 reviews is the milestone. Start with 1.',
+        newmrrPrinciple: 'Social proof is the first review. 100 reviews is the milestone. Start with 1.',
         metric: 'At least one documented testimonial with a specific result, ready to use in outreach.',
       },
       {
@@ -76,7 +76,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Headline: "[Outcome] for [Audience] in [Timeframe]"\nBullet 1: You get [specific thing]\nBullet 2: You get [specific thing]\nBullet 3: You get [specific thing]\n[Testimonial]\nPrice: $[X]\n[Buy Now Button]',
         whenItWorks: 'Someone lands on it and pays without asking questions. That\'s product-market fit. Now send more people to it.',
         whenItDoesnt: 'People visit but don\'t buy. Add one more testimonial. Change the headline. Lower the friction — offer a payment plan.',
-        moranPrinciple: 'Launch Blitz — your page is doing the selling before you even show up.',
+        newmrrPrinciple: 'Launch Blitz — your page is doing the selling before you even show up.',
         metric: 'A live link someone can click to pay you. That\'s it. Done.',
       },
       {
@@ -87,7 +87,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m putting together [your product] specifically for [audience]. I\'m offering it to 3 founding clients at $[50% of full price] before I open it publicly. Interested? I only have 3 spots."',
         whenItWorks: 'Someone says yes and pays. You now have validation, revenue, and a deadline. Deliver an exceptional result and ask for a testimonial.',
         whenItDoesnt: 'Nobody bites. Ask the ones who said no: "What would make this a yes?" Their answer is more valuable than the sale.',
-        moranPrinciple: 'Pre-selling validates demand and funds the build. Never build without proof someone will pay.',
+        newmrrPrinciple: 'Pre-selling validates demand and funds the build. Never build without proof someone will pay.',
         metric: 'One pre-sale completed — money collected before full delivery.',
       },
       {
@@ -98,7 +98,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Before: "[Customer] was struggling with [problem] and [consequence]."\nDuring: "We worked together on [what you did] over [timeframe]."\nAfter: "[Specific result — numbers, feelings, changes]."\n"[Direct quote from customer]."',
         whenItWorks: 'You have a story you can share everywhere — social posts, email, DMs, your sales page. One good case study runs forever.',
         whenItDoesnt: 'You don\'t have a customer yet. Use yourself. Document your own before and after. Authenticity beats credentials.',
-        moranPrinciple: 'Brand over listing — your story is your most valuable marketing asset.',
+        newmrrPrinciple: 'Brand over listing — your story is your most valuable marketing asset.',
         metric: 'One written case study under 200 words with a specific result.',
       },
       {
@@ -109,7 +109,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'T: "Hey [Name], I help [audience] with [skill]."\nA: "Is [specific problem] something you\'ve been dealing with?"\nG: "Would it be okay if I sent you something that might help? No pitch, just value."',
         whenItWorks: 'They reply. Now you have a conversation. Ask questions. Listen. Don\'t pitch until they ask.',
         whenItDoesnt: 'They don\'t reply. Follow up once after 3 days: "Just checking — did this land in spam?" Then move on.',
-        moranPrinciple: 'Small yeses build to big sales. The relationship is the revenue.',
+        newmrrPrinciple: 'Small yeses build to big sales. The relationship is the revenue.',
         metric: '10 Connect messages sent. Track replies. Aim for 3-5 conversations started.',
       },
       {
@@ -120,7 +120,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Customer type] came to me struggling with [problem].\n\nAfter [timeframe] working together:\n→ [Result 1]\n→ [Result 2]\n→ [Result 3]\n\nHere\'s the one thing that changed everything: [your insight]\n\nAre you dealing with [problem]?"',
         whenItWorks: 'Someone comments or DMs asking how you did it. That\'s a warm lead. Respond with a question, not a pitch.',
         whenItDoesnt: 'Post gets no engagement. Repost it in a relevant community or Facebook group where your audience actually is.',
-        moranPrinciple: 'Audience building before product launching. Content is your 24/7 salesperson.',
+        newmrrPrinciple: 'Audience building before product launching. Content is your 24/7 salesperson.',
         metric: 'One proof post published. Screenshot any engagement or DMs it generates.',
       },
       {
@@ -131,7 +131,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I know we talked a while back about [topic]. I wanted to check in — is [their problem] still something you\'re working through? I have one spot open this month and thought of you."',
         whenItWorks: 'They say yes. You didn\'t need a new lead — you needed to follow up with an old one.',
         whenItDoesnt: 'They say no or don\'t respond. That\'s okay. You now know to move them out of your pipeline and stop spending energy on them.',
-        moranPrinciple: 'Relationships before transactions. Following up is not bothering — it\'s caring.',
+        newmrrPrinciple: 'Relationships before transactions. Following up is not bothering — it\'s caring.',
         metric: 'Every "maybe" from the last 60 days contacted. Track conversions.',
       },
       {
@@ -142,7 +142,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m really glad [result you got them]. I\'m looking to help a few more [specific description of their peer group]. Do you know anyone who\'s dealing with [their original problem]? Even a quick intro would mean a lot."',
         whenItWorks: 'They send you a name. Now you have a warm lead with built-in trust. The referral closes at 3x the rate of a cold lead.',
         whenItDoesnt: 'They can\'t think of anyone right now. That\'s fine. Ask: "If you do think of someone, would you be willing to introduce us?" Plant the seed.',
-        moranPrinciple: 'Brand ambassadors are your best salespeople. Build relationships that refer.',
+        newmrrPrinciple: 'Brand ambassadors are your best salespeople. Build relationships that refer.',
         metric: 'One referral ask made. Even a no is progress — it tells you something about the relationship.',
       },
       {
@@ -153,7 +153,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I was thinking about [their specific situation] and put together [unexpected thing] just for you. No charge, no obligation — I just thought it would help."',
         whenItWorks: 'They\'re shocked and grateful. They tell people. They leave a review without being asked. They become a referral machine.',
         whenItDoesnt: 'They appreciate it but nothing big happens. That\'s fine. You built goodwill that will pay off eventually. Do it again next month with someone else.',
-        moranPrinciple: '"The key to success was not in focusing on the bottom line but on the people." — a service business case study.',
+        newmrrPrinciple: '"The key to success was not in focusing on the bottom line but on the people." — a service business case study.',
         metric: 'One customer genuinely surprised and delighted. Document their reaction.',
       },
       {
@@ -164,7 +164,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Based on working together, I want to offer you something. I\'m launching a monthly [your recurring model] where you get [specific monthly outcome]. First month is $[price]. Want in?"',
         whenItWorks: 'Your first gateway customer says yes to monthly. You now have MRR. That\'s the milestone. Everything changes from here.',
         whenItDoesnt: 'They say they can\'t afford it monthly. Ask: "What would make monthly feel worth it?" Build the answer into the offer.',
-        moranPrinciple: 'Product stacking — your second product sells to your first customer. Same audience, new revenue.',
+        newmrrPrinciple: 'Product stacking — your second product sells to your first customer. Same audience, new revenue.',
         metric: 'Recurring offer packaged and pitched to at least one existing customer.',
       },
     ],
@@ -178,7 +178,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Search terms to find them: "[audience] community", "[audience] support group", "[problem they have] help", "[industry] professionals network"',
         whenItWorks: 'You find active communities with people asking questions you can answer. Lurk first. Understand the language they use. Then answer one question with real value.',
         whenItDoesnt: 'Communities are dead or not the right fit. That\'s information. Try LinkedIn search, Twitter/X, or look for real-world events where they gather.',
-        moranPrinciple: 'Audience first — find where they already are before trying to pull them somewhere new.',
+        newmrrPrinciple: 'Audience first — find where they already are before trying to pull them somewhere new.',
         metric: '5 communities joined. 3 days of reading. One pattern identified about their biggest recurring problem.',
       },
       {
@@ -189,7 +189,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Good answer structure: "[Validate their situation]. Here\'s what I\'ve seen work: [specific answer]. The thing most people miss is [insight]. [If relevant, share a quick example]. Happy to go deeper if helpful."',
         whenItWorks: 'People upvote, thank you, or DM you. When someone DMs asking for more help, that\'s a warm lead. Respond with a question about their situation.',
         whenItDoesnt: 'Posts get ignored. Check if you\'re in the right communities. Check if your answers are specific enough. Generic advice gets ignored. Hyper-specific answers get shared.',
-        moranPrinciple: 'Give and serve — serving others leads to profit. Every answer is an investment in your reputation.',
+        newmrrPrinciple: 'Give and serve — serving others leads to profit. Every answer is an investment in your reputation.',
         metric: '10 answers posted across communities. Track which ones got the most engagement.',
       },
       {
@@ -200,7 +200,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I saw you [liked/commented on] my response about [topic]. Sounds like [problem] is something you\'re dealing with. I\'d love to hear more about your situation — what\'s the hardest part for you right now?"',
         whenItWorks: 'They share their situation. You now have a real conversation. Listen for 80% of it. Only mention your offer if they ask or if it\'s clearly the right fit.',
         whenItDoesnt: 'They don\'t reply. Follow up once after 2 days: "Just checking this landed — would love to connect." If still nothing, move on.',
-        moranPrinciple: 'Small yeses — start with curiosity, not a pitch. The conversation is the sale.',
+        newmrrPrinciple: 'Small yeses — start with curiosity, not a pitch. The conversation is the sale.',
         metric: '5 DMs sent to warm leads. Track conversation starters vs non-responders.',
       },
       {
@@ -211,7 +211,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], based on our conversation, I think I might be able to help. Would you be open to a 15-minute call this week? I just want to understand your situation better — no pitch, promise."',
         whenItWorks: 'They say yes. On the call: ask questions for the first 10 minutes. Only share your solution in the last 5 if they ask or if it\'s clearly a fit. End with: "Based on what you shared, I think [your solution] could help. Want to hear more?"',
         whenItDoesnt: 'They say they\'re too busy. Offer async: "Totally understand. Would it help if I sent you a 3-minute voice note instead?" Reduce the friction.',
-        moranPrinciple: '"Call your top customers. Ask: What can I help you with today?" — a service business grew 30x from this one action.',
+        newmrrPrinciple: '"Call your top customers. Ask: What can I help you with today?" — a service business grew 30x from this one action.',
         metric: 'One call booked and completed. Document what you learned about their situation.',
       },
       {
@@ -222,7 +222,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Content formula: "The [Problem] Playbook for [Audience]: [Step 1], [Step 2], [Step 3]. The thing nobody tells you: [your unique insight]. Save this for when you need it."',
         whenItWorks: 'People save it, share it, or DM you saying it helped. Each of those is a warm lead. The content keeps working while you sleep.',
         whenItDoesnt: 'Low engagement. Check the platform — is your audience actually on it? Check the hook — does the first line make them stop scrolling?',
-        moranPrinciple: 'Audience building — every piece of content is a brick in your platform.',
+        newmrrPrinciple: 'Audience building — every piece of content is a brick in your platform.',
         metric: 'One piece of specific, helpful content published. Track saves and DMs generated.',
       },
       {
@@ -233,7 +233,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m building out my profile and would love a quick testimonial from you. Could you answer this in 2-3 sentences: Before we worked together, what was the situation? After, what specifically changed? I\'ll send you a draft if that\'s easier."',
         whenItWorks: 'You get 3 real, specific testimonials with results. Post them everywhere — your sales page, social bio, email signature, DMs.',
         whenItDoesnt: 'People don\'t respond. Make it easier: "Even one sentence about what you got out of our work would mean a lot." Or send them a draft and ask them to approve it.',
-        moranPrinciple: '100 reviews is the milestone for 25 sales/day. Start with 3 this week.',
+        newmrrPrinciple: '100 reviews is the milestone for 25 sales/day. Start with 3 this week.',
         metric: '3 written testimonials collected with specific results, ready to use.',
       },
       {
@@ -244,7 +244,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m running a free 45-minute session on [specific topic] for [audience]. Limited to 10 people so I can make it personal. Interested? Here\'s the link to grab a spot: [link]"',
         whenItWorks: '10 people show up. You deliver real value. 2-3 buy your entry offer at the end. That\'s $[2-3 x your price] from one 45-minute session.',
         whenItDoesnt: 'Few people show up. Record it anyway. The recording becomes a lead magnet. Send it to people who couldn\'t make it and ask if they want the offer.',
-        moranPrinciple: 'Launch Blitz — demonstrate before you sell. Experienced value converts better than described value.',
+        newmrrPrinciple: 'Launch Blitz — demonstrate before you sell. Experienced value converts better than described value.',
         metric: '10 invitations sent. Session completed. Number of attendees and conversions tracked.',
       },
       {
@@ -255,7 +255,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I love what you do for [audience]. I serve the same group with [your skill]. I\'d love to explore if there\'s a way we could add value to each other\'s audiences — no pitch, just a conversation. Would a 20-minute call work this week?"',
         whenItWorks: 'They say yes. On the call, listen first. Look for a genuine way to add value to their audience. Then ask: "Would it make sense to introduce me to your community?"',
         whenItDoesnt: 'They don\'t respond. Try a different approach: comment on their content genuinely for 2 weeks before reaching out. Warm the relationship first.',
-        moranPrinciple: 'The Influence Method — find your 10 key relationships. One of them becomes your champion.',
+        newmrrPrinciple: 'The Influence Method — find your 10 key relationships. One of them becomes your champion.',
         metric: 'One outreach sent to a potential partner. Track the conversation.',
       },
       {
@@ -266,7 +266,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Specific result a customer got].\n\nHere\'s what actually happened:\n[2-3 sentence story]\n\nThe one thing that made the difference:\n[Your insight]\n\nAre you dealing with [their original problem]?"',
         whenItWorks: 'People comment with their own situation. Each comment is a public testimonial AND a lead. DM everyone who engages.',
         whenItDoesnt: 'Posts get ignored. Try posting at different times, in communities instead of just your feed, or ask a friend to comment first to break the silence.',
-        moranPrinciple: 'Brand building — your content is building your brand ambassador network one post at a time.',
+        newmrrPrinciple: 'Brand building — your content is building your brand ambassador network one post at a time.',
         metric: '3 proof posts published. Track which got the most engagement and do more of that.',
       },
       {
@@ -277,7 +277,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m expanding and looking for [description of ideal customer]. I\'d love to work with more people like you. If you refer someone who becomes a customer, I\'ll [your offer — free month, discount, bonus]. Know anyone who could use [your result]?"',
         whenItWorks: 'You get one referral. One referral that converts is worth 10 cold leads. Thank the referrer immediately and deliver an exceptional result to the new customer.',
         whenItDoesnt: 'No referrals come in. Check if your offer is compelling enough. Check if your customers are happy enough to refer — if not, that\'s the real problem to solve first.',
-        moranPrinciple: 'Brand ambassadors — turning customers into your salesforce is the most efficient customer acquisition.',
+        newmrrPrinciple: 'Brand ambassadors — turning customers into your salesforce is the most efficient customer acquisition.',
         metric: 'Referral offer sent to all past customers. Track referrals generated.',
       },
       {
@@ -288,7 +288,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Ad targeting: [your audience] + interested in [their problem] + age range that fits your customer profile. Ad copy: use the exact words from your best organic post. Don\'t change what already worked.',
         whenItWorks: 'You get conversations or clicks at under $5 each. Scale to $20/day for another week. You\'ve found a working channel.',
         whenItDoesnt: 'No clicks or very expensive clicks. Try a different platform — if Instagram didn\'t work, try LinkedIn. Try a different image or opening line.',
-        moranPrinciple: 'Traffic Triangle — paid ads amplify organic. Never run ads to cold content. Only boost what already works.',
+        newmrrPrinciple: 'Traffic Triangle — paid ads amplify organic. Never run ads to cold content. Only boost what already works.',
         metric: '$50 spent. Cost per click and cost per conversation tracked.',
       },
       {
@@ -299,7 +299,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Track in a simple spreadsheet: Name, Channel (DM/call/email), Date, Outcome (yes/no/maybe), Follow-up date. Review it every Monday morning.',
         whenItWorks: 'You\'re having 25+ conversations. Your close rate tells you everything — if it\'s under 20%, work on your pitch. If it\'s over 50%, add more conversations.',
         whenItDoesnt: 'Under 25 conversations. Pick the one activity from weeks 1-11 that generated the most conversations. Do it 3x more this week.',
-        moranPrinciple: '25 sales/day starts with 25 conversations/month. The math doesn\'t lie.',
+        newmrrPrinciple: '25 sales/day starts with 25 conversations/month. The math doesn\'t lie.',
         metric: '25 tracked sales conversations this month. Close rate calculated.',
       },
     ],
@@ -313,7 +313,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Template: Task | Time spent | Category (Only Me / Trainable / Automatable) | How often I do this. Review on Friday and count the hours in "Trainable" — that\'s your first hire.',
         whenItWorks: 'You identify 5+ hours/week of trainable tasks. Those are the first things you delegate or systemize. That time goes back into growth activities.',
         whenItDoesnt: 'Everything feels like only you can do it. Go deeper — is it really only you? Or do you just not have a documented process yet? The process comes first.',
-        moranPrinciple: 'Owner\'s Model — build a business that runs without you. Systems before scale.',
+        newmrrPrinciple: 'Owner\'s Model — build a business that runs without you. Systems before scale.',
         metric: 'Full task audit completed. Hours in "Trainable" category counted.',
       },
       {
@@ -324,7 +324,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Process doc structure: Task name → Why it matters → When to do it → Step 1 (with example) → Step 2 → Step 3 → How to know if it\'s done right → What to do if something goes wrong.',
         whenItWorks: 'Someone follows the process without asking you questions. That task is now scalable. Move to the next one next week.',
         whenItDoesnt: 'They need to ask questions. Each question is a gap in your documentation. Add the answer to the doc. Eventually it becomes self-sufficient.',
-        moranPrinciple: 'Systematize and prepare for exit — documented processes increase business value.',
+        newmrrPrinciple: 'Systematize and prepare for exit — documented processes increase business value.',
         metric: 'One process document written and tested by someone other than you.',
       },
       {
@@ -335,7 +335,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Track for each customer: First touchpoint → What made them reach out → What closed them. Look for patterns. The pattern is your leverage.',
         whenItWorks: 'One clear pattern emerges — most customers came from referrals, or from a specific type of content, or from a specific community. Double down on that one thing.',
         whenItDoesnt: 'No pattern. That means you haven\'t made enough sales yet to see it. Go back to Week 1 of the customers track and add volume first.',
-        moranPrinciple: 'Focus principle — you can\'t scale two things at once. Find the one and go deep.',
+        newmrrPrinciple: 'Focus principle — you can\'t scale two things at once. Find the one and go deep.',
         metric: 'Source of every sale tracked. One primary channel identified.',
       },
       {
@@ -346,7 +346,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Template elements to standardize: Opening format, common sections, standard recommendations, closing format, follow-up checklist. Leave blanks for the custom parts.',
         whenItWorks: 'Your delivery time cuts in half. You can now serve twice as many clients without twice the hours. That\'s the first multiplier.',
         whenItDoesnt: 'Every client situation feels too unique. Find the 3 things that ARE the same across all clients and standardize those. Customize everything else.',
-        moranPrinciple: 'Build systems, not just revenue — operational efficiency is the path to scale.',
+        newmrrPrinciple: 'Build systems, not just revenue — operational efficiency is the path to scale.',
         metric: 'One deliverable template created. Time to complete tracked before and after.',
       },
       {
@@ -357,7 +357,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m restructuring my pricing to reflect the value I deliver. Starting [date], my [offer] is $[new price]. Current clients are locked in at their rate."',
         whenItWorks: 'New clients accept the new price without pushback. That means your old price was too low. Keep raising until you get resistance, then stay just below it.',
         whenItDoesnt: 'You lose a prospect over price. Ask: "What would make this feel worth it?" Their answer either helps you improve the offer or confirms they\'re not your customer.',
-        moranPrinciple: 'Premium pricing — better margin means better service means better results means better testimonials.',
+        newmrrPrinciple: 'Premium pricing — better margin means better service means better results means better testimonials.',
         metric: 'New price set. First new client at new price tracked.',
       },
       {
@@ -368,7 +368,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Onboarding sequence: Day 0 - Welcome email (what to expect) → Day 1 - Intake form or kick-off call → Day 3 - First deliverable or progress update → Day 7 - Check-in: "How is everything going?"',
         whenItWorks: 'Clients comment on how organized and professional your process feels. That\'s the beginning of a testimonial. Ask them to share that feeling publicly.',
         whenItDoesnt: 'It feels robotic. Add one personal touch — a voice note, a handwritten note, a personalized detail that shows you paid attention to their specific situation.',
-        moranPrinciple: 'Customer ownership — how you onboard determines if they stay, refer, and buy again.',
+        newmrrPrinciple: 'Customer ownership — how you onboard determines if they stay, refer, and buy again.',
         metric: 'Onboarding sequence documented and tested with next new client.',
       },
       {
@@ -379,7 +379,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m launching a group [your service] for [audience]. Limited to 8 people. You get [what they get] over [timeframe] for $[price]. This is the same work I do 1-on-1 at $[higher price], shared with a small group. Interested?"',
         whenItWorks: '3+ people sign up. You now earn 3x from one block of time. Deliver exceptional results. The group dynamic creates accountability that often produces better results than 1-on-1.',
         whenItDoesnt: 'Nobody signs up. The offer might not be clear enough. Try: "I\'ll run this for free for 3 people in exchange for a detailed testimonial." Use their results to sell the paid version.',
-        moranPrinciple: 'Product stacking — same audience, same time, more revenue. This is the leverage move.',
+        newmrrPrinciple: 'Product stacking — same audience, same time, more revenue. This is the leverage move.',
         metric: 'Group offer created and pitched to existing audience. Number of signups tracked.',
       },
       {
@@ -390,7 +390,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Job posting: "Looking for [role] to help with [specific task]. Deliverables: [list]. Time: [hours/week]. Rate: [$X/hour]. Start date: [date]. DM me with examples of similar work."',
         whenItWorks: 'You free up 5 hours/week. Those 5 hours go directly into your highest-leverage activity. The math: if your time is worth $100/hour and you\'re doing $20/hour tasks, you\'re losing $80/hour.',
         whenItDoesnt: 'Hard to find the right person. Start with a small paid test project before committing. Better to test 3 people on small tasks than commit to 1 person on a big task.',
-        moranPrinciple: 'Systems and team — a business that only works when you\'re working isn\'t a business. It\'s a job.',
+        newmrrPrinciple: 'Systems and team — a business that only works when you\'re working isn\'t a business. It\'s a job.',
         metric: 'First hire or outsource identified. Test project assigned.',
       },
       {
@@ -401,7 +401,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], I wanted to send a quick update on where we are. When we started, [their situation]. Now, [what\'s changed]. Next, [what\'s coming]. Quick question — what\'s been most valuable so far?"',
         whenItWorks: 'They express gratitude and share what\'s working. Ask them: "Would you be willing to share that in a testimonial?" Strike while the positive feeling is fresh.',
         whenItDoesnt: 'They\'re not seeing results yet. This is good information. Address it now before they cancel — not after. Ask what would make it more valuable.',
-        moranPrinciple: 'Serve first — serving customers exceptionally is the actual profit strategy.',
+        newmrrPrinciple: 'Serve first — serving customers exceptionally is the actual profit strategy.',
         metric: 'Every active client has received a progress update this week. Retention impact tracked.',
       },
       {
@@ -412,7 +412,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], I\'ve been getting a lot of questions about [adjacent topic]. I\'m putting together [new offer] for [audience who already bought]. Since you\'re already a client, I want to offer it to you first at [founding rate]."',
         whenItWorks: 'Existing clients buy the second product. Your revenue per customer doubles without any new customer acquisition. This is the compounding effect.',
         whenItDoesnt: 'Existing clients aren\'t interested. The second product might not be aligned with their next need. Ask: "What\'s the next problem you\'re working through?" Build that instead.',
-        moranPrinciple: 'Product stacking to same audience — each product compounds your revenue without compounding your costs.',
+        newmrrPrinciple: 'Product stacking to same audience — each product compounds your revenue without compounding your costs.',
         metric: 'Second product defined and offered to existing customers. Number of takers tracked.',
       },
       {
@@ -423,7 +423,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Columns: Revenue Source | Monthly Revenue | Hours/Month | Revenue per Hour | Growth Trend | Action\nFill in every source. Sort by Revenue per Hour. The top source gets more attention this month.',
         whenItWorks: 'One source clearly dominates in Revenue per Hour. Double your investment in that source. Cut or outsource anything under $50/hour.',
         whenItDoesnt: 'No source stands out. That means none of them are efficient enough yet. Pick the one with the best growth trend and optimize that one first.',
-        moranPrinciple: 'Exit-ready from day one — clean documented revenue is what buyers pay premium for.',
+        newmrrPrinciple: 'Exit-ready from day one — clean documented revenue is what buyers pay premium for.',
         metric: 'Revenue dashboard built. Highest Revenue per Hour source identified.',
       },
       {
@@ -434,7 +434,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'If it\'s content: post twice as often on that platform. If it\'s referrals: contact twice as many past customers for referrals. If it\'s paid ads: double the budget. If it\'s communities: engage in twice as many per week.',
         whenItWorks: 'Revenue increases proportionally. You\'ve found your growth lever. Keep pulling it.',
         whenItDoesnt: 'Results don\'t scale linearly. That means you\'ve hit a ceiling on that channel. Time to add a second channel that you test at small scale while the first one maintains.',
-        moranPrinciple: 'The Scale phase — 100 sales/day comes from doing 25 sales/day well and stacking it.',
+        newmrrPrinciple: 'The Scale phase — 100 sales/day comes from doing 25 sales/day well and stacking it.',
         metric: 'Primary channel doubled. Week-over-week growth tracked.',
       },
     ],
@@ -448,7 +448,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Questions to ask yourself: What do clients ask me about after delivery is done? What do they struggle with on an ongoing basis? What would break down if they stopped getting help? That\'s your recurring value.',
         whenItWorks: 'You identify 1-2 things that genuinely have ongoing value. Package them. Give the package a name. Price it at a monthly rate that feels like maintenance, not a big purchase.',
         whenItDoesnt: 'Everything feels one-time. Think deeper — what\'s the ongoing outcome they need, not the one-time deliverable? Outcomes are usually recurring even when deliverables aren\'t.',
-        moranPrinciple: 'Product stacking — recurring is your second product to your first customer. Same person, monthly revenue.',
+        newmrrPrinciple: 'Product stacking — recurring is your second product to your first customer. Same person, monthly revenue.',
         metric: 'Recurring need identified. Package name and monthly price set.',
       },
       {
@@ -459,7 +459,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], based on the work we did together on [result], I want to make sure that keeps growing. I\'m launching a monthly [your recurring offer] specifically for clients like you. It\'s $[price]/month and includes [what they get]. Want to be a founding member?"',
         whenItWorks: 'One client says yes. That\'s your first MRR. Celebrate it. Deliver exceptional monthly value. Their renewal next month confirms the model works.',
         whenItDoesnt: 'Nobody bites. Ask them: "What would make a monthly offer feel worth it to you?" Build the answer into the offer. You might just need to clarify the ongoing value better.',
-        moranPrinciple: 'Same audience, new product — your existing customers are your best customers for new offers.',
+        newmrrPrinciple: 'Same audience, new product — your existing customers are your best customers for new offers.',
         metric: 'Recurring offer pitched to all current/recent clients. First MRR signup tracked.',
       },
       {
@@ -470,7 +470,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Monthly deliverable template: "Every month on the [date], you receive: [specific thing 1], [specific thing 2], [access to X]. Additionally, you have [ongoing access/support]. This month\'s focus: [specific topic or goal]."',
         whenItWorks: 'Subscribers know exactly what to expect and when. Clarity creates anticipation. Anticipation reduces cancellations.',
         whenItDoesnt: 'Deliverables vary too much month to month. Pick a consistent core that never changes, then add variable elements on top. Consistency builds trust.',
-        moranPrinciple: 'Customer ownership — predictable value keeps customers. Unpredictable value loses them.',
+        newmrrPrinciple: 'Customer ownership — predictable value keeps customers. Unpredictable value loses them.',
         metric: 'Monthly deliverable documented. Delivery date set. Communicated to all subscribers.',
       },
       {
@@ -481,7 +481,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Retention ritual examples: Monthly live Q&A (scheduled same time each month), personalized monthly progress report, first access to new content or offers, community spotlight where you feature a member\'s win.',
         whenItWorks: 'Subscribers mention the ritual unprompted. "I love the monthly [thing]." That\'s the thing that\'s keeping them. Protect it. Never cancel it.',
         whenItDoesnt: 'Low attendance or engagement with the ritual. Ask subscribers: "What would make you look forward to this more?" Evolve it based on their answer.',
-        moranPrinciple: 'Repeat customer flow — your best customers need a reason to stay engaged. Give them one every month.',
+        newmrrPrinciple: 'Repeat customer flow — your best customers need a reason to stay engaged. Give them one every month.',
         metric: 'One monthly ritual defined, scheduled, and announced to subscribers.',
       },
       {
@@ -492,7 +492,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], I was thinking about [their specific situation] and put together [something specific and useful] just for you. It\'s not part of the standard subscription — I just thought it would help based on what you\'re working toward."',
         whenItWorks: 'They\'re genuinely surprised and say something like "you didn\'t have to do that." That reaction is the one that leads to referrals. Ask: "Would you be willing to share your experience with others?"',
         whenItDoesnt: 'They appreciate it but nothing happens. That\'s still a win — you\'ve strengthened the relationship. Do it again next month with a different subscriber.',
-        moranPrinciple: 'Serving others is the actual profit strategy — not a soft approach, but the high-performance one.',
+        newmrrPrinciple: 'Serving others is the actual profit strategy — not a soft approach, but the high-performance one.',
         metric: 'One VIP experience delivered. Subscriber reaction documented.',
       },
       {
@@ -503,7 +503,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m offering founding members the option to lock in an annual rate — 12 months of [subscription name] for the price of 10. That\'s $[10 x monthly price] instead of $[12 x monthly price]. Offer closes [date in 7 days]."',
         whenItWorks: 'One subscriber upgrades to annual. That cash is now in your account. Use it to invest in the business, not personal expenses.',
         whenItDoesnt: 'Nobody takes it. Check the offer — is 2 months free compelling enough? Try sweetening it with an exclusive bonus for annual subscribers only.',
-        moranPrinciple: 'Revenue stacking — annual plans are the financial foundation that lets you invest in growth.',
+        newmrrPrinciple: 'Revenue stacking — annual plans are the financial foundation that lets you invest in growth.',
         metric: 'Annual offer sent to all monthly subscribers. Conversions tracked.',
       },
       {
@@ -514,7 +514,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Churn calculation: If you had 20 subscribers on June 1 and 2 cancelled during June, your churn rate is 2/20 = 10%. That means you\'re losing your entire subscriber base every 10 months. Fix this before scaling.',
         whenItWorks: 'Churn is under 5%. Focus on acquisition — your retention is healthy.',
         whenItDoesnt: 'Churn is over 5%. Contact every person who cancelled in the last 3 months. Ask: "What would have made you stay?" Their answers are your product roadmap.',
-        moranPrinciple: 'Exit-ready — consistent churn data is what sophisticated buyers look for when acquiring subscription businesses.',
+        newmrrPrinciple: 'Exit-ready — consistent churn data is what sophisticated buyers look for when acquiring subscription businesses.',
         metric: 'Monthly churn rate calculated. Cancellation reasons documented.',
       },
       {
@@ -525,7 +525,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Member Name] just [specific win]. They\'ve been a member for [timeframe] and [what changed]. If you\'re working toward [similar goal], here\'s what made the difference for them: [insight]."',
         whenItWorks: 'Other members engage with the win and share their own. Creates community momentum. Non-members see it and want in. Win wall becomes acquisition content.',
         whenItDoesnt: 'Members don\'t share wins. Ask them directly: "What\'s one thing that\'s gone better this month?" Even small wins are worth celebrating publicly.',
-        moranPrinciple: 'Community as product — the transformation of one member motivates all members.',
+        newmrrPrinciple: 'Community as product — the transformation of one member motivates all members.',
         metric: 'Win Wall created. First 3 member wins documented and shared.',
       },
       {
@@ -536,7 +536,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], you\'ve been one of our most engaged members and I want to offer you something I don\'t offer everyone. A premium version of [subscription] where you get [specific premium benefits]. It\'s $[2-3x price]/month. Interested?"',
         whenItWorks: 'They say yes. You now have a premium tier with one customer proving the concept. Use their experience to build the premium tier offer for other members.',
         whenItDoesnt: 'They\'re not interested. Ask: "What would make a premium option worth it to you?" Their answer is your premium tier product design.',
-        moranPrinciple: 'Product stacking vertically — same customer, higher value, higher price.',
+        newmrrPrinciple: 'Product stacking vertically — same customer, higher value, higher price.',
         metric: 'Premium tier created and pitched to one subscriber. Conversion tracked.',
       },
       {
@@ -547,7 +547,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"This month, active [subscription name] members get access to [exclusive thing]. This is only available to people who are subscribed right now — it won\'t be available later. Here\'s how to access it: [link/instructions]."',
         whenItWorks: 'Members engage with the bonus and mention it in conversation or reviews. Non-members who hear about it become acquisition fuel — "I want access to that."',
         whenItDoesnt: 'Low engagement with the bonus. Ask: "What would be most useful for you to have access to?" Let them tell you what the next exclusive bonus should be.',
-        moranPrinciple: 'Subscriber value stacking — the sum of what they\'d lose by cancelling should feel greater than the monthly price.',
+        newmrrPrinciple: 'Subscriber value stacking — the sum of what they\'d lose by cancelling should feel greater than the monthly price.',
         metric: 'Subscriber-only bonus created and delivered. Engagement rate tracked.',
       },
       {
@@ -558,7 +558,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], you\'ve been with us for [X months]. I\'d love to document your journey to show other [audience] what\'s possible. Could I ask you a few questions? I\'ll write it up and get your approval before sharing anything."',
         whenItWorks: 'You have a compelling before/after story with timeline and specific results. This becomes your #1 sales tool for new subscribers.',
         whenItDoesnt: 'They\'re not comfortable being featured publicly. Ask if you can use their story anonymously. Even an anonymous case study with real numbers is powerful.',
-        moranPrinciple: 'Brand over listing — your subscriber stories are your brand. Each one is more powerful than any ad.',
+        newmrrPrinciple: 'Brand over listing — your subscriber stories are your brand. Each one is more powerful than any ad.',
         metric: 'One subscriber success story written, approved, and ready to publish.',
       },
       {
@@ -569,7 +569,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], I\'ve been getting questions from members about [adjacent topic]. I\'m adding [second offer] as an optional add-on for $[price]/month. As a current subscriber you can add it with one click. Interested?"',
         whenItWorks: 'Even 20% of your subscribers take the add-on. If you have 20 subscribers at $97 and 4 take a $47 add-on, that\'s $188 extra MRR from the same customer base. Do it again with a third add-on.',
         whenItDoesnt: 'Low uptake. The add-on might not be solving a real pain point. Survey subscribers: "What\'s the one thing outside of [current subscription] you wish you had help with?" Build that.',
-        moranPrinciple: 'The $1M formula — offer stacking to the same audience is how 25 sales/day becomes 100 sales/day.',
+        newmrrPrinciple: 'The $1M formula — offer stacking to the same audience is how 25 sales/day becomes 100 sales/day.',
         metric: 'Second recurring product or add-on launched. Add-on conversion rate tracked.',
       },
     ],
@@ -585,7 +585,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Test your sentence on 5 people who fit your audience. Ask only: "Would you understand immediately what this means?" If not, ask what confused them and fix that one word.',
         whenItWorks: 'All 5 people understand it immediately and at least 2 say "I need that." Lock it in. Put it everywhere.',
         whenItDoesnt: 'They still have questions. Each question is a word to fix. The sentence that requires zero follow-up questions is the one that converts in ads.',
-        moranPrinciple: 'At the momentum stage, clarity is your competitive advantage. The most understood offer wins.',
+        newmrrPrinciple: 'At the momentum stage, clarity is your competitive advantage. The most understood offer wins.',
         metric: 'One-sentence offer validated by 5 people with zero clarifying questions.',
       },
       {
@@ -596,7 +596,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Framework structure: Name it ([Your Name]\'s [Name] Method/System/Formula). Give it 3-5 steps. Name each step with a memorable word. Example: The FOUNDATION System — Generate, Reach, Identify, Nurture, Deliver.',
         whenItWorks: 'Clients start using your framework language. "I\'m in the [step] phase." When people use your words, your ideas are spreading.',
         whenItDoesnt: 'Framework feels forced. Don\'t name it yet. Just write down the 3-5 things that always need to happen for clients to succeed. The framework emerges from the pattern.',
-        moranPrinciple: 'Brand building — a named methodology is an asset that appreciates over time.',
+        newmrrPrinciple: 'Brand building — a named methodology is an asset that appreciates over time.',
         metric: 'Named framework with 3-5 steps created. Used in at least one client conversation.',
       },
       {
@@ -607,7 +607,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Case study format:\nSITUATION: [Client type] came to us [time period] ago facing [specific situation].\nCHALLENGE: The biggest obstacle was [specific challenge].\nSOLUTION: We worked on [what you did] over [timeframe].\nRESULT: [Specific numbers — revenue, time saved, leads generated, etc.]\nIN THEIR WORDS: "[Direct quote]"',
         whenItWorks: 'You can point prospects to this case study and they come back ready to buy. That\'s the test — does it pre-sell for you?',
         whenItDoesnt: 'The numbers aren\'t compelling enough. Focus on a different dimension — the emotional transformation, the time saved, the stress eliminated. Numbers aren\'t the only proof.',
-        moranPrinciple: 'Case studies are the currency of trust at scale. 10 case studies and you rarely need to pitch.',
+        newmrrPrinciple: 'Case studies are the currency of trust at scale. 10 case studies and you rarely need to pitch.',
         metric: 'One complete case study with specific numbers and client quote, published.',
       },
       {
@@ -618,7 +618,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Event title formula: "How to [achieve specific result] Without [their biggest fear] in [timeframe]"\nStructure: Hook (5 min) → Teaching (40 min) → Offer (10 min) → Q&A (5 min)',
         whenItWorks: '50 attendees, 5 buyers. That\'s 10% conversion which is strong. Scale by running it monthly and driving more traffic.',
         whenItDoesnt: 'Low attendance or low conversion. Check the title — does it promise a specific result? Check the offer — does it naturally follow the teaching? The best webinars teach the why and sell the how.',
-        moranPrinciple: 'Launch Blitz at scale — a webinar is the The Influence Method compressed into 60 minutes.',
+        newmrrPrinciple: 'Launch Blitz at scale — a webinar is the The Influence Method compressed into 60 minutes.',
         metric: 'One webinar completed. Attendance and conversion rate tracked.',
       },
       {
@@ -629,7 +629,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Email format:\nSubject: [Result] in [timeframe]\nLine 1: [Specific result a client got]\nLine 2-3: [Quick story of how]\nLine 4: Here\'s how I can help you do the same: [offer + price]\nLine 5: This is open until [date]. After that, [consequence].\nCTA: [Link to buy]',
         whenItWorks: 'At least 1-3% of your list buys. On a list of 500, that\'s 5-15 sales from one email. That\'s the power of email.',
         whenItDoesnt: 'Low open rate or no sales. Check the subject line — is it about them or about you? Check the offer — is the deadline real? Fake urgency destroys trust.',
-        moranPrinciple: 'Email list ownership — your list is the most valuable asset in your business. Sell to it regularly.',
+        newmrrPrinciple: 'Email list ownership — your list is the most valuable asset in your business. Sell to it regularly.',
         metric: 'One sales email sent. Open rate, click rate, and sales tracked.',
       },
       {
@@ -640,7 +640,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Challenge structure: Day 1 — [quick win action]. Day 2 — [builds on day 1]. Day 3 — [another win]. Day 4 — [midpoint check-in + testimonial collection]. Day 5-6 — [bigger actions]. Day 7 — [final win + your offer].',
         whenItWorks: 'Participants are posting their results publicly. Each post is free advertising. End of challenge conversion rate is typically 10-20% to your paid offer.',
         whenItDoesnt: 'Drop-off after day 2. Your daily action is too hard or too vague. Make each day\'s action completable in under 15 minutes. Small wins maintain momentum.',
-        moranPrinciple: 'Audience building through serving — the challenge builds your list, your authority, and your proof simultaneously.',
+        newmrrPrinciple: 'Audience building through serving — the challenge builds your list, your authority, and your proof simultaneously.',
         metric: 'Challenge completion rate and day-7 conversion rate tracked.',
       },
       {
@@ -651,7 +651,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'ve been following [their show/newsletter] and love how you [specific thing they do]. I work with [audience] on [skill] and have been getting results like [specific result]. I think [specific topic] would be valuable for your audience. Would you be open to a 20-minute conversation about it?"',
         whenItWorks: 'One says yes. Prepare thoroughly. Deliver more value than they expected. At the end, mention where people can find you. The leads that come from this are the warmest you\'ll find.',
         whenItDoesnt: 'All say no. Your pitch might be too generic. Research each one specifically and customize the topic to their audience. The more specific the pitch, the higher the yes rate.',
-        moranPrinciple: 'The Influence Method — the 10 relationships that matter most are the ones who already reach your audience.',
+        newmrrPrinciple: 'The Influence Method — the 10 relationships that matter most are the ones who already reach your audience.',
         metric: '5 pitches sent. Track responses. First media appearance booked.',
       },
       {
@@ -662,7 +662,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m launching a referral program for [subscription/offer]. If you refer someone who becomes a customer, you get [reward]. Here\'s your unique link: [link]. Send it to anyone you think would benefit from [your result]."',
         whenItWorks: 'Your first referral partner sends you 2+ customers in a month. That partner is gold. Invest in the relationship, give them extra support, and treat their referrals like VIPs.',
         whenItDoesnt: 'No referrals come in. Check if the reward is compelling. Check if the people you asked actually know potential customers. Sometimes the issue is the messenger, not the program.',
-        moranPrinciple: 'Brand ambassadors at scale — a referral program systematizes what your best customers were doing informally.',
+        newmrrPrinciple: 'Brand ambassadors at scale — a referral program systematizes what your best customers were doing informally.',
         metric: 'Referral program launched. First referral tracked.',
       },
       {
@@ -673,7 +673,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'OTO message: "Wait — before you access [what they just bought], I want to offer you one thing that makes it 3x more effective. [Describe the add-on]. Normally $[X], I\'m adding it to your order right now for just $[lower price]. This offer expires when you leave this page."',
         whenItWorks: '20-30% of buyers take the upsell. That\'s 20-30% more revenue from the same acquisition cost. Stack two OTOs (first at lower price, second at higher) for even more.',
         whenItDoesnt: 'Low uptake. The upsell might not be clearly connected to what they just bought. Make the connection explicit: "Since you just got [X], this [Y] is the natural next step because [reason]."',
-        moranPrinciple: 'Product stacking — the best time to sell is right after a sale.',
+        newmrrPrinciple: 'Product stacking — the best time to sell is right after a sale.',
         metric: 'OTO created and added to checkout flow. Upsell conversion rate tracked.',
       },
       {
@@ -684,7 +684,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Ad targeting checklist: Define the age range that matches your best customers. Select interests that align with their problem. Use lookalike audiences based on your customer email list if you have 100+ emails.',
         whenItWorks: 'Cost per lead is under $10, or cost per conversation is under $25. Scale to $50/day, then $100/day. Only scale what has proven to work.',
         whenItDoesnt: 'High cost per click with no conversions. Your offer landing page might be the issue, not the ad. Test sending traffic to a simpler page — just the headline, one benefit, and a button.',
-        moranPrinciple: 'Traffic Triangle — paid ads amplify proven organic content. Never run ads to unproven content.',
+        newmrrPrinciple: 'Traffic Triangle — paid ads amplify proven organic content. Never run ads to unproven content.',
         metric: '$140 ad spend ($20/day × 7). Cost per lead and cost per customer calculated.',
       },
       {
@@ -695,7 +695,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], based on finishing [first product], most clients run into [next challenge]. I\'ve just launched [second product] that specifically addresses this. Since you\'re already a customer, you get first access at [founding rate]. Interested?"',
         whenItWorks: '20-30% of existing customers buy the second product. Your revenue per customer doubles. Your customer acquisition cost stays the same. That\'s the leverage.',
         whenItDoesnt: 'Low uptake. Ask: "What\'s the next thing you\'re working on after [first product]?" Their actual answer might be different from what you assumed. Build that.',
-        moranPrinciple: 'The $1M formula — 3 products × 25/day × price = $1M. You\'re adding product 2.',
+        newmrrPrinciple: 'The $1M formula — 3 products × 25/day × price = $1M. You\'re adding product 2.',
         metric: 'Second product launched. Existing customer conversion rate tracked.',
       },
       {
@@ -706,7 +706,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Daily sales tracker: Set up a simple spreadsheet with date, daily sales, and source. Review every morning. The pattern over 30 days tells you exactly where to invest next.',
         whenItWorks: 'You hit or exceed 25 sales/day. You\'re at the first milestone. Time to launch product 2 and 3 to the same audience and begin The Scale phase.',
         whenItDoesnt: 'Still far from 25/day. Go back to Week 1 of whichever track matches your current biggest block. The framework is right — the volume just needs to increase.',
-        moranPrinciple: '25 sales/day is product-market fit. Everything before that is finding the fit.',
+        newmrrPrinciple: '25 sales/day is product-market fit. Everything before that is finding the fit.',
         metric: 'Daily sales rate calculated. Gap to 25/day identified. Plan to close gap written.',
       },
     ],
@@ -719,7 +719,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Personalization formula: Reference something specific about them (a post they made, a challenge they mentioned, a role they hold). Then connect it to your skill. Generic messages get ignored. Specific messages get responses.',
         whenItWorks: '5+ responses from 20 messages. That\'s 25% — a strong rate. Convert conversations to discovery calls. Scale this: 20/week becomes your baseline.',
         whenItDoesnt: 'Under 3 responses. Your targeting might be off (wrong people) or your message isn\'t specific enough (copy-paste feels like spam). Fix one variable at a time.',
-        moranPrinciple: 'Relationship first, transaction second. Outreach is starting a conversation, not making a pitch.',
+        newmrrPrinciple: 'Relationship first, transaction second. Outreach is starting a conversation, not making a pitch.',
         metric: '20 outreach messages sent. Response rate calculated.',
       },
       {
@@ -730,7 +730,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Discovery call structure that converts: 5 min — understand their situation. 5 min — identify the specific problem. 5 min — quantify the cost of the problem. 5 min — present your solution as the answer to what they just described. 5 min — handle objections. Close.',
         whenItWorks: 'Conversion rate increases from the fix. You\'ve found a repeatable sales process. Document it so you can train someone else on it later.',
         whenItDoesnt: 'Still low conversion. The issue is usually one of three things: wrong leads (not qualified), wrong price (too high for the value demonstrated), or wrong close (asking for the sale too soon or too late).',
-        moranPrinciple: 'Systems before scale — a documented sales process is a scalable sales process.',
+        newmrrPrinciple: 'Systems before scale — a documented sales process is a scalable sales process.',
         metric: '3 calls recorded and reviewed. One specific improvement identified and tested.',
       },
       {
@@ -741,7 +741,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Lead magnet formats that work: "The [X]-Step Checklist for [Outcome]", "The [Audience] Guide to [Specific Result]", "The Script I Use to [Achieve Outcome]". Keep it to 1-2 pages. Immediate value wins over comprehensive guides.',
         whenItWorks: 'People who download it DM you saying it helped. Those DMs are your warmest leads. Respond to every one.',
         whenItDoesnt: 'Nobody opts in or they opt in and don\'t engage. Your lead magnet might promise too little (not compelling enough) or too much (overwhelming). Test a different title.',
-        moranPrinciple: 'Audience building — every email you collect is a relationship you own. Platforms disappear. Email lists don\'t.',
+        newmrrPrinciple: 'Audience building — every email you collect is a relationship you own. Platforms disappear. Email lists don\'t.',
         metric: 'Lead magnet created and live. Weekly opt-in rate tracked.',
       },
       {
@@ -752,7 +752,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], we talked [timeframe] ago about [their situation]. I know life gets busy. I wanted to check in — is [their problem] still something you\'re working through? I\'ve been helping people in similar situations get [specific result]. Would it make sense to reconnect?"',
         whenItWorks: '5-10% of cold leads re-engage. That\'s leads you already paid to acquire, converting for free. One re-engagement email to 100 cold leads typically generates 1-5 sales.',
         whenItDoesnt: 'No response. Follow up once after 3 days with a different angle — maybe a piece of relevant content rather than a direct check-in.',
-        moranPrinciple: 'Fortune is in the follow-up — most sales happen on the 5th touch. Most people stop at 2.',
+        newmrrPrinciple: 'Fortune is in the follow-up — most sales happen on the 5th touch. Most people stop at 2.',
         metric: 'Cold lead list built. Re-engagement campaign sent. Conversions tracked.',
       },
       {
@@ -763,7 +763,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'New channel launch formula: Research what format works on that platform. Post 3x/week for 4 weeks before evaluating. Track: followers gained, leads generated, sales converted. Don\'t judge until you have 4 weeks of data.',
         whenItWorks: 'Even 2-3 leads/week from the new channel. That\'s worth the investment. Scale the content on that channel.',
         whenItDoesnt: 'Zero leads after 4 weeks. The channel might not be where your audience is, or your content format isn\'t working on that platform. Try a different format before abandoning the channel.',
-        moranPrinciple: 'Building audiences — each new channel is a new sub-audience that joins your main audience.',
+        newmrrPrinciple: 'Building audiences — each new channel is a new sub-audience that joins your main audience.',
         metric: 'New channel identified and 12+ pieces of content published. Leads generated tracked.',
       },
       {
@@ -774,7 +774,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I\'m updating my testimonials and thought of you. Would you be willing to answer 3 quick questions? 1) What was your situation before we worked together? 2) What changed after? 3) What would you tell someone considering working with me? Feel free to reply here or record a quick voice note."',
         whenItWorks: 'You collect 10+ testimonials in one week. Publish them everywhere. Video testimonials convert 3x better than written — ask for video if they\'re willing.',
         whenItDoesnt: 'Low response rate. Offer something in return — a free resource, a discount on their next purchase, a referral bonus. Make it easy for them to say yes.',
-        moranPrinciple: '100 reviews — this is the milestone that unlocks consistent daily sales.',
+        newmrrPrinciple: '100 reviews — this is the milestone that unlocks consistent daily sales.',
         metric: 'Testimonial campaign completed. Total testimonials collected. Video vs written split.',
       },
       {
@@ -785,7 +785,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"For the next 72 hours only, I\'m offering [your offer] for $[discounted price or with bonus]. After [specific date/time], this goes back to $[regular price]. Here\'s the link: [link]. No extensions."',
         whenItWorks: 'Sales spike in the final 12 hours. That\'s normal — urgency activates last-minute buyers. Use this pattern quarterly to create predictable revenue spikes.',
         whenItDoesnt: 'No response. Your audience might not be big enough yet for flash sales to work. Or the discount isn\'t significant enough. Try: a bonus instead of a discount, which maintains your pricing.',
-        moranPrinciple: 'The launch moment — creating intentional urgency is Launch Blitz on a recurring basis.',
+        newmrrPrinciple: 'The launch moment — creating intentional urgency is Launch Blitz on a recurring basis.',
         metric: 'Flash sale revenue tracked. Compare to average weekly revenue. Run quarterly.',
       },
       {
@@ -796,7 +796,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Partner], we serve the same [audience] but in different ways. I help them with [your skill] and you help them with [their skill]. I\'d love to explore a co-promotion where we each introduce our audiences to each other. I\'m thinking [specific idea]. Open to a quick call?"',
         whenItWorks: 'One partner agrees. Run one joint piece of content or event. Cross-promote each other to your respective audiences. Even a 10% conversion from their audience is significant new customer volume.',
         whenItDoesnt: 'Partners aren\'t interested. Offer to go first — promote them to your audience before asking anything in return. Give before you ask.',
-        moranPrinciple: 'Audience building through partnerships — borrowed audiences are the fastest path to new customers.',
+        newmrrPrinciple: 'Audience building through partnerships — borrowed audiences are the fastest path to new customers.',
         metric: '3 partnership pitches sent. First partnership activated.',
       },
       {
@@ -807,7 +807,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Freelancer brief: "I need someone to research and contact [X] potential customers per week using this exact script [script]. Track responses in this spreadsheet [template]. Bring me anyone who responds positively."',
         whenItWorks: 'Your lead volume increases while your personal time on lead gen decreases. You now have more time for high-value activities. The cost of the VA should be offset by even 1-2 new customers per month.',
         whenItDoesnt: 'Quality of outreach drops. The fix is better documentation, not more oversight. Rewrite the brief until the output is what you need without you checking every message.',
-        moranPrinciple: 'Owner\'s Model — delegate the mechanical, keep the meaningful.',
+        newmrrPrinciple: 'Owner\'s Model — delegate the mechanical, keep the meaningful.',
         metric: 'Lead gen process documented. First freelancer or VA hired and producing leads.',
       },
       {
@@ -818,7 +818,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Profile template: Name (give them a fake name), Role/Situation, Age range, What they were trying to achieve, What had stopped them before, What they said when they first reached out, What result they got, What they said after.',
         whenItWorks: 'Your content, ads, and outreach start attracting more people who look and sound exactly like that profile. Quality of leads goes up. Close rate goes up.',
         whenItDoesnt: 'You don\'t have 10 customers yet to analyze. Use the 3 best conversations you\'ve had — even with prospects who didn\'t buy. The pattern still emerges.',
-        moranPrinciple: 'Choose your customer first — defining your WHO with extreme specificity is step 1.',
+        newmrrPrinciple: 'Choose your customer first — defining your WHO with extreme specificity is step 1.',
         metric: 'Dream customer profile written. Used to rewrite one piece of marketing this week.',
       },
       {
@@ -829,7 +829,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Hot signals: They asked about price, They have an urgent timeline, They\'ve consumed your content repeatedly, They fit your dream customer profile exactly.\nWarm signals: Engaged with content, Asked general questions, Expressed interest without urgency.\nCold signals: One-time engagement, No clear problem, Price is primary concern.',
         whenItWorks: 'You spend 80% of your sales time on Hot leads. Your close rate increases because you\'re no longer diluting your energy on leads who aren\'t ready.',
         whenItDoesnt: 'Everything feels like a Hot lead. The issue is wishful thinking. Be ruthless. A true Hot lead needs all 3-4 signals. One signal means Warm at best.',
-        moranPrinciple: 'Focus principle — your energy is your most valuable resource. Spend it on the right leads.',
+        newmrrPrinciple: 'Focus principle — your energy is your most valuable resource. Spend it on the right leads.',
         metric: 'Lead scoring system built. All current leads scored. Time allocation adjusted.',
       },
       {
@@ -840,7 +840,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Growth math: If your close rate is 30%, you need 84 discovery calls to get 25 customers. If 20% of leads book a call, you need 420 leads. If 5% of outreach converts to leads, you need 8,400 touches. That\'s the work.',
         whenItWorks: 'You hit 25 new customers. You\'ve proven the model. Now stack a second product and start moving toward The Scale phase.',
         whenItDoesnt: 'You get 10-15 new customers. That\'s still massive growth. Identify the biggest leak — was it leads, calls, or close rate? Fix that one thing and run the math again.',
-        moranPrinciple: '25 sales/day is the validation milestone. Everything before that is finding what works.',
+        newmrrPrinciple: '25 sales/day is the validation milestone. Everything before that is finding what works.',
         metric: '25 new customers in the month. Breakdown by channel tracked.',
       },
     ],
@@ -853,7 +853,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Delivery audit categories: Core (only you can do this — your unique insight), Structural (follows a pattern — templateable), Administrative (scheduling, formatting, sending — delegatable), Redundant (you\'re doing it but it\'s not moving results — eliminate).',
         whenItWorks: 'You find 30-40% of delivery hours in the Structural and Administrative categories. Those are your first outsource targets.',
         whenItDoesnt: 'Everything feels Core. Go deeper. The unique part of your service is probably 20% of the total work. Find the 80% that supports it.',
-        moranPrinciple: 'Systems before scale — you can\'t delegate what you haven\'t systematized.',
+        newmrrPrinciple: 'Systems before scale — you can\'t delegate what you haven\'t systematized.',
         metric: 'Full delivery audit complete. Hours by category totaled. Biggest delegation opportunity identified.',
       },
       {
@@ -864,7 +864,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Automated onboarding flow: Day 0 - Auto welcome email (what to expect, what to prepare) → Day 1 - Auto intake form or questionnaire → Day 2 - Your personal kick-off call (the one thing only you can do) → Day 3 - Auto resource delivery → Day 7 - Auto check-in email.',
         whenItWorks: 'Clients say they feel taken care of immediately. You spend less than 30 minutes on the first week of a new client. The rest is automated.',
         whenItDoesnt: 'Automation feels impersonal. Add one hyper-personal touch — a 60-second video recorded specifically for them. Everything else can be automated if this one moment is genuinely personal.',
-        moranPrinciple: 'Build a business that runs without you — this is the first step toward an exit-ready operation.',
+        newmrrPrinciple: 'Build a business that runs without you — this is the first step toward an exit-ready operation.',
         metric: 'Onboarding automation live. Time spent on onboarding before vs after measured.',
       },
       {
@@ -875,7 +875,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Role description must include: Specific tasks with examples, Time commitment per week, How success is measured, Who they report to, Rate and payment terms. Vague job descriptions attract vague candidates.',
         whenItWorks: 'Your first hire takes 5+ hours/week of work off your plate within 30 days. You reinvest those hours in the highest-revenue activity you have.',
         whenItDoesnt: 'They need constant management. The issue is usually documentation — your processes aren\'t written clearly enough for someone else to follow. Fix the docs before blaming the hire.',
-        moranPrinciple: 'Owner\'s Model — a business that requires you for everything isn\'t a business. It\'s a job.',
+        newmrrPrinciple: 'Owner\'s Model — a business that requires you for everything isn\'t a business. It\'s a job.',
         metric: 'First hire made. Hours freed per week tracked. Revenue generated from freed time.',
       },
       {
@@ -886,7 +886,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m launching a group [your service] for [audience]. 8 spots only. You get [what they get] over [timeframe] alongside a small cohort of [audience] working toward the same goal. Price: $[X]. Founding cohort gets [bonus]. Applications open [date]."',
         whenItWorks: '8 people at $500 = $4,000 from one block of time. Your individual rate might be $500 for one client in that same time. That\'s 8x leverage from the same hours.',
         whenItDoesnt: 'Can\'t fill 8 spots. Start with 3. A smaller group still works and you have proof of concept for the next launch.',
-        moranPrinciple: 'Scale with efficiency — same time, more impact, more revenue. This is the momentum stage leverage move.',
+        newmrrPrinciple: 'Scale with efficiency — same time, more impact, more revenue. This is the momentum stage leverage move.',
         metric: 'Group program filled and launched. Revenue per hour compared to individual delivery.',
       },
       {
@@ -897,7 +897,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'SOP template: Task Name → Why This Matters → When to Do It → Prerequisites → Step 1 (with screenshot or example) → Step 2 → ... → Quality Check → Common Mistakes and How to Avoid Them → What Done Looks Like.',
         whenItWorks: 'You can hand the SOP to someone else and they complete the task correctly without asking you anything. That task is now scalable.',
         whenItDoesnt: 'They still have questions. Each question is a gap in the SOP. Add the answer. A good SOP eliminates all questions after 2-3 iterations.',
-        moranPrinciple: 'Systematize for exit — documented processes are what make a business sellable.',
+        newmrrPrinciple: 'Systematize for exit — documented processes are what make a business sellable.',
         metric: 'One SOP written, tested, and approved. Target: one SOP per week for 12 weeks.',
       },
       {
@@ -908,7 +908,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'For new recurring offer: "I\'m launching [subscription name] — [what they get] every month for $[price]/month. For founding members only, I\'m offering [bonus] when you join in the next 7 days. [Link]"',
         whenItWorks: 'You add 5+ recurring subscribers. Now you have $[5 × price] guaranteed next month before you do anything. That predictability is worth more than the money.',
         whenItDoesnt: 'Can\'t fill a subscription. Make the first month free or at a steep discount. Get them experiencing the value. Month 2 conversion from free trials is typically 60-70%.',
-        moranPrinciple: 'Recurring revenue is the foundation — build for the exit, and predictable MRR is what buyers pay for.',
+        newmrrPrinciple: 'Recurring revenue is the foundation — build for the exit, and predictable MRR is what buyers pay for.',
         metric: 'MRR total before and after this week. New subscribers added.',
       },
       {
@@ -919,7 +919,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Client results tracker columns: Client Name, Start Date, End Date, Key Metric at Start, Key Metric at End, % Change, Testimonial (Y/N), Case Study (Y/N), Referrals Generated.',
         whenItWorks: 'You can see at a glance your average client result. That number becomes your core marketing claim: "Clients average [X]% improvement in [metric] in [timeframe]."',
         whenItDoesnt: 'Results vary too much to average. Segment by client type. The right clients get the right results. The inconsistency might be a targeting problem.',
-        moranPrinciple: 'Exit-ready — documented client results are what buyers pay premium for when acquiring service businesses.',
+        newmrrPrinciple: 'Exit-ready — documented client results are what buyers pay premium for when acquiring service businesses.',
         metric: 'Results tracking system built. All active clients entered. Average result calculated.',
       },
       {
@@ -930,7 +930,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Capacity audit: List every activity in a client engagement. Next to each, write the time it takes and whether the client would notice if it changed. The ones they wouldn\'t notice? Optimize those first.',
         whenItWorks: 'You can take on 30% more clients with the same or fewer hours. That\'s a 30% revenue increase without any new customer acquisition.',
         whenItDoesnt: 'Every step feels essential. Ask your clients what they value most about working with you. They\'ll tell you the 20% that matters. The other 80% is where your capacity lives.',
-        moranPrinciple: 'Build for efficiency — every hour saved in delivery is an hour you can reinvest in growth.',
+        newmrrPrinciple: 'Build for efficiency — every hour saved in delivery is an hour you can reinvest in growth.',
         metric: 'One delivery process optimized. Time saved per client calculated. New total capacity measured.',
       },
       {
@@ -941,7 +941,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Monthly review template:\n1. Revenue: $X (vs $Y last month) — [up/down %]\n2. New customers: X (vs Y last month)\n3. Churn: X customers cancelled\n4. Top channel: [which source brought most customers]\n5. Biggest time sink: [what took most time]\n6. This month I will fix: [one specific thing]',
         whenItWorks: 'You see patterns you were too close to notice. One pattern you act on generates more revenue than a month of random activity.',
         whenItDoesnt: 'Numbers are incomplete. Start tracking now. Even 30 days of data tells you more than gut feeling.',
-        moranPrinciple: 'Exit-ready — clean monthly metrics are what sophisticated buyers look for.',
+        newmrrPrinciple: 'Exit-ready — clean monthly metrics are what sophisticated buyers look for.',
         metric: 'First monthly review completed. All 6 metrics tracked.',
       },
       {
@@ -952,7 +952,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'ve been asked [question] so many times that I built [product name]. It\'s [what it is] for [audience] who want [result]. $[price]. Here\'s the link: [link]."',
         whenItWorks: 'Even 2-3 sales/month of a passive product. That\'s $[2-3 × price] per month with zero delivery time. As it scales, it becomes a significant revenue stream.',
         whenItDoesnt: 'Nobody buys it. The self-serve product might need more proof that it works. Run 3 people through it for free in exchange for testimonials. Use their results to market it.',
-        moranPrinciple: 'Product 2 sells to Product 1\'s audience — same people, new revenue, no new acquisition cost.',
+        newmrrPrinciple: 'Product 2 sells to Product 1\'s audience — same people, new revenue, no new acquisition cost.',
         metric: 'Second revenue stream live. First month sales tracked.',
       },
       {
@@ -963,7 +963,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Journey map columns: Touchpoint → Customer\'s Experience → Your Rating (1-10) → What Would Make It a 10. Focus your week on improving the two lowest-rated touchpoints.',
         whenItWorks: 'Two touchpoints improved. Customer feedback confirms the improvement. Every point you raise in the journey increases lifetime value and referrals.',
         whenItDoesnt: 'Everything feels like a 10 already. Get an outside perspective — ask a recent customer to walk you through their experience in their words. Their version and yours will differ.',
-        moranPrinciple: 'Customer ownership — every touchpoint either builds or erodes the relationship.',
+        newmrrPrinciple: 'Customer ownership — every touchpoint either builds or erodes the relationship.',
         metric: 'Customer journey mapped. Two lowest-rated touchpoints identified and improved.',
       },
       {
@@ -974,7 +974,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Gold Readiness Checklist:\n[ ] Documented sales process\n[ ] At least 1 team member or outsource\n[ ] 2+ revenue streams\n[ ] Recurring revenue component\n[ ] 10+ documented client results with numbers\n[ ] Monthly business review in place\n[ ] SOP library with 5+ processes documented',
         whenItWorks: '6/7 checked. You\'re ready for The Scale. Start stacking products 3 and 4 to your existing audience.',
         whenItDoesnt: 'Under 4/7 checked. That\'s your roadmap for next quarter. Focus on the missing items before trying to scale further.',
-        moranPrinciple: 'The Scale — 100 sales/day comes from systematized growth, not heroic effort.',
+        newmrrPrinciple: 'The Scale — 100 sales/day comes from systematized growth, not heroic effort.',
         metric: 'Gold readiness audit complete. Score out of 7. Gap items become next quarter\'s priority.',
       },
     ],
@@ -987,7 +987,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], I saw you cancelled and I completely respect that. I\'m always trying to improve. Would you be willing to answer one question honestly? What would have made [subscription name] worth continuing for you? Even one sentence would really help."',
         whenItWorks: 'You get 2-3 specific answers. Those answers point to the same 1-2 things. Fix those things for current subscribers before acquiring new ones.',
         whenItDoesnt: 'They don\'t respond. Contact subscribers who are still active. Ask: "What\'s the one thing you\'d miss most if you cancelled?" The answer is what you need to amplify.',
-        moranPrinciple: 'Serve first — the subscription model only works when subscribers genuinely need what they\'re getting every month.',
+        newmrrPrinciple: 'Serve first — the subscription model only works when subscribers genuinely need what they\'re getting every month.',
         metric: '3 churned subscribers contacted. Top cancellation reasons identified.',
       },
       {
@@ -998,7 +998,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '3-month email: "You\'ve been a [subscription name] member for 3 months. That\'s [X weeks] of [what they\'ve been working on]. To celebrate, here\'s something just for you: [bonus]. Thank you for trusting us with your growth."',
         whenItWorks: 'Subscribers mention the milestone recognition unprompted. When they feel seen, they stay. When they stay, they refer.',
         whenItDoesnt: 'Milestones go unnoticed. Make them more personal — a video message, a specific reference to something from their journey. Generic appreciation doesn\'t land.',
-        moranPrinciple: 'VIP repeat customer flow — your best customers deserve the best experience.',
+        newmrrPrinciple: 'VIP repeat customer flow — your best customers deserve the best experience.',
         metric: 'Loyalty milestones defined. First milestone gift sent to qualifying subscribers.',
       },
       {
@@ -1009,7 +1009,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"This month\'s [subscription name] challenge: [Specific monthly challenge]. Week 1 action: [action]. Share your results with [hashtag or in our community]. At the end of the month, I\'ll feature the best result and [reward]."',
         whenItWorks: '30%+ of subscribers participate. Those who participate report dramatically higher value from the subscription and churn at half the rate of non-participants.',
         whenItDoesnt: 'Low participation. The challenge might be too hard or too vague. Make Week 1 completable in under 10 minutes. Quick wins build momentum.',
-        moranPrinciple: 'Community as product — participation creates the value that retention requires.',
+        newmrrPrinciple: 'Community as product — participation creates the value that retention requires.',
         metric: 'Monthly challenge launched. Participation rate tracked. Churn rate compared to non-challenge months.',
       },
       {
@@ -1020,7 +1020,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], you\'ve been one of our most engaged members and I want to offer you something I don\'t offer to everyone. A [premium tier name] where you get [exclusive benefits]. It\'s $[price] — would you like to talk through what that would look like for you specifically?"',
         whenItWorks: 'Even one subscriber upgrades. That one conversion can represent 5-10 months of subscription revenue in a single transaction. Use their transformation as your case study for selling more.',
         whenItDoesnt: 'Not interested. Ask: "What would a premium relationship need to include to be worth it?" Their answer designs your premium tier.',
-        moranPrinciple: 'Product stacking vertically — the same audience at higher price points is more efficient than new audience at lower prices.',
+        newmrrPrinciple: 'Product stacking vertically — the same audience at higher price points is more efficient than new audience at lower prices.',
         metric: 'Premium tier offered to 5 subscribers. Conversion tracked.',
       },
       {
@@ -1031,7 +1031,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'First week community content: Day 1 — Introduction thread ("Introduce yourself and your #1 goal"). Day 3 — Resource share ("What\'s one tool you\'d recommend?"). Day 5 — Win share ("What\'s one win from this week, no matter how small?").',
         whenItWorks: 'Subscribers introduce themselves and interact with each other. Peer-to-peer value starts flowing. The community now provides value you don\'t have to create yourself.',
         whenItDoesnt: 'Dead community. The issue is usually that you\'re not seeding enough conversations. Post daily for the first 2 weeks. Communities need momentum before they self-sustain.',
-        moranPrinciple: 'Community is the new email list — owned relationships that deepen over time.',
+        newmrrPrinciple: 'Community is the new email list — owned relationships that deepen over time.',
         metric: 'Community launched. Daily active members tracked. Churn rate comparison in 30 days.',
       },
       {
@@ -1042,7 +1042,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], if you know someone who would benefit from [subscription name], I\'d love you to introduce us. For every person you refer who subscribes, I\'ll give you [reward]. Here\'s your personal referral link: [link]."',
         whenItWorks: 'Even 20% of subscribers make one referral. If you have 20 subscribers and 4 refer one person each, that\'s 4 new subscribers at zero acquisition cost.',
         whenItDoesnt: 'No referrals. The reward might not be compelling enough, or subscribers might not feel confident enough in the subscription to recommend it. Fix the subscription first.',
-        moranPrinciple: 'Brand ambassadors — your subscribers are your best salespeople when you give them a reason to sell.',
+        newmrrPrinciple: 'Brand ambassadors — your subscribers are your best salespeople when you give them a reason to sell.',
         metric: 'Referral program launched. Referrals generated tracked. Cost per acquisition vs other channels compared.',
       },
       {
@@ -1053,7 +1053,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name] joined [subscription name] [X months] ago working toward [their goal]. Here\'s what\'s changed: [2-3 specific results]. In their words: \'[quote]\'. If you\'re working toward [similar goal], [subscription name] might be for you: [link]."',
         whenItWorks: 'The featured subscriber shares the spotlight. Their network sees it. You get organic reach from someone else\'s credibility. Other subscribers aspire to be featured.',
         whenItDoesnt: 'Subscribers don\'t want to be featured publicly. Use anonymous spotlights: "One of our members, a [role] from [location], achieved [result]..." The story still converts even without a name.',
-        moranPrinciple: 'Case studies compound — each spotlight is proof that runs forever.',
+        newmrrPrinciple: 'Case studies compound — each spotlight is proof that runs forever.',
         metric: 'Monthly spotlight system created. First spotlight published. Reach and leads generated tracked.',
       },
       {
@@ -1064,7 +1064,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I saw you were a [subscription name] member a while back. We\'ve made some significant changes since then — [specific improvement]. I\'d love to have you back and I\'m offering returning members [specific incentive] if you rejoin by [date]. Interested?"',
         whenItWorks: '15-20% of cancelled subscribers return. Someone who cancelled 6 months ago and comes back has proven they believe in the value — they just got off track.',
         whenItDoesnt: 'Low response or re-conversion rate. The improvements you mentioned might not be compelling enough. Survey cancelled subscribers: "What would need to change for you to come back?" Build that.',
-        moranPrinciple: 'Re-engagement flow — the 7th email flow. Former customers are easier to close than cold prospects.',
+        newmrrPrinciple: 'Re-engagement flow — the 7th email flow. Former customers are easier to close than cold prospects.',
         metric: 'Win-back campaign sent. Re-subscription rate tracked.',
       },
       {
@@ -1075,7 +1075,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Progress report structure: "[Name]\'s [Subscription Name] Journey — Month 1 to Month 6"\nWhen you started: [their situation at month 1]\nWhat you worked on: [summary of topics/missions]\nWhere you are now: [current status]\nWhat\'s next: [their roadmap for months 7-12]\nKey insight from your journey: [something specific you noticed]"',
         whenItWorks: 'Subscribers share the progress report. They feel seen and understood. The report triggers a purchase of your next product — they\'re ready for more.',
         whenItDoesnt: 'Progress isn\'t measurable. That\'s a signal that your subscription needs clearer success metrics. Add a goal-setting moment at the start of every subscriber relationship.',
-        moranPrinciple: 'Customer success = subscription success. When subscribers succeed, they stay, refer, and upgrade.',
+        newmrrPrinciple: 'Customer success = subscription success. When subscribers succeed, they stay, refer, and upgrade.',
         metric: '6-month reviews sent to all qualifying subscribers. Retention impact measured.',
       },
       {
@@ -1086,7 +1086,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Library structure: By Topic (category 1, category 2, etc.), By Phase (Grind resources, Growth resources, Gold resources), By Type (Scripts, Templates, Checklists, Recordings, Guides). Add new content weekly.',
         whenItWorks: 'Subscribers reference past content. "I went back to the Week 3 script and it worked." That reference is evidence they\'re using the library — and that they\'d lose something real by cancelling.',
         whenItDoesnt: 'Library doesn\'t get used. The organization might be the issue. Survey subscribers: "What would make you use the library more?" Simple fixes like better naming or a quick start guide can 3x usage.',
-        moranPrinciple: 'Subscription value accumulates — the longer they stay, the more they have. This inverts the churn incentive.',
+        newmrrPrinciple: 'Subscription value accumulates — the longer they stay, the more they have. This inverts the churn incentive.',
         metric: 'Content library built. Monthly usage rate tracked.',
       },
       {
@@ -1097,7 +1097,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'If you have 30 subscribers, you need 20 more. At a 20% conversion rate from subscribers to referrals, you need each of your 30 subscribers to refer 0.7 people. Ask 30 subscribers for one referral each and you\'ll get there.',
         whenItWorks: 'You hit 50. The community starts to self-sustain. Churn becomes a manageable percentage rather than an existential threat.',
         whenItDoesnt: 'Still far from 50. Run a promotion: "Join in the next 7 days and get [bonus]." Create urgency. Sometimes the only thing between you and the next 10 subscribers is a clear deadline.',
-        moranPrinciple: '25/day to 100/day — the same compounding logic applies to subscriber counts.',
+        newmrrPrinciple: '25/day to 100/day — the same compounding logic applies to subscriber counts.',
         metric: 'Subscriber count tracked weekly. Path to 50 mapped and executed.',
       },
       {
@@ -1108,7 +1108,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'MRR growth formula: New MRR (new subscribers × price) - Churned MRR (cancelled subscribers × price) = Net New MRR. If net new MRR is positive for 3 consecutive months, you have a growing subscription business.',
         whenItWorks: 'Net new MRR is positive and increasing. You now have a compounding business. Each month builds on the last. This is The Scale phase in action.',
         whenItDoesnt: 'Net new MRR is negative or flat. You\'re on a treadmill. Fix churn first (Weeks 1-7 of this track), then scale acquisition.',
-        moranPrinciple: 'The $1M formula applied to subscriptions — recurring compounding is the most powerful form of the formula.',
+        newmrrPrinciple: 'The $1M formula applied to subscriptions — recurring compounding is the most powerful form of the formula.',
         metric: 'Net new MRR calculated for last 3 months. Trend direction confirmed.',
       },
     ],
@@ -1124,7 +1124,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Premium positioning formula: "For [hyper-specific audience] who [specific situation and urgency], [your offer] is the only [category] that [specific mechanism] to achieve [specific result] in [timeframe], guaranteed."',
         whenItWorks: 'Prospects stop asking about price. When people are asking "how do I sign up" instead of "what does it cost," your positioning is doing its job.',
         whenItDoesnt: 'Still getting price objections. The problem is usually "for who" — your positioning is too broad. Narrow the audience until the right people feel you\'re speaking directly to them.',
-        moranPrinciple: 'Premium pricing is a positioning strategy. The most specific offer for the most specific person commands the highest price.',
+        newmrrPrinciple: 'Premium pricing is a positioning strategy. The most specific offer for the most specific person commands the highest price.',
         metric: 'New positioning written. First 10 people who see it asked about price vs asked how to start.',
       },
       {
@@ -1135,7 +1135,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Proposal structure: Executive Summary (their situation in their words) → Recommended Solution (specifically tailored) → How It Works (your process) → Expected Outcomes (specific and measurable) → Investment → Next Steps → Deadline.',
         whenItWorks: 'Prospects sign proposals within 24-48 hours. Speed is a proxy for conviction. A proposal that goes unsigned for a week usually means something wasn\'t addressed.',
         whenItDoesnt: 'Proposals sit unsigned. Follow up with: "I want to make sure this is the right fit. What questions do you have before moving forward?" The question they ask reveals the objection to overcome.',
-        moranPrinciple: 'The brand experience starts before they become a client. A great proposal is the first proof of your premium service.',
+        newmrrPrinciple: 'The brand experience starts before they become a client. A great proposal is the first proof of your premium service.',
         metric: 'Proposal template built. Average time to signature tracked.',
       },
       {
@@ -1146,7 +1146,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Signature program elements: Program name, The transformation promise, The phases (3-5 named stages), What happens in each phase, Client responsibilities, Your responsibilities, The guarantee, The investment.',
         whenItWorks: 'Prospects reference the program by name. "I want to do [your program name]." When they name it, you\'ve built a brand.',
         whenItDoesnt: 'Program feels generic. Name the phases after the transformation stages your clients go through — use your clients\' language, not industry jargon. Their words are your best marketing.',
-        moranPrinciple: 'Brand over listing — a named methodology is an asset. It\'s defensible, memorable, and scalable.',
+        newmrrPrinciple: 'Brand over listing — a named methodology is an asset. It\'s defensible, memorable, and scalable.',
         metric: 'Signature program named, documented, and visually designed. First program pitch using new materials.',
       },
       {
@@ -1157,7 +1157,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"For a small number of clients each year, I offer [premium program name] — a fully done-with-you experience where [specific premium outcome]. Investment: $[5-10x price]. I take 3-5 clients per year at this level. Application required."',
         whenItWorks: 'Even one high-ticket client per quarter at 10x your normal price replaces the revenue from 10 regular clients. Your average revenue per customer skyrockets.',
         whenItDoesnt: 'Can\'t find takers. The premium offer might need more proof. Document 3 case studies at your current level first. Those results justify the premium price.',
-        moranPrinciple: 'Exit from day one — premium revenue per customer is what acquirers look for when valuing your business.',
+        newmrrPrinciple: 'Exit from day one — premium revenue per customer is what acquirers look for when valuing your business.',
         metric: 'High-ticket offer created. Application process built. First application received.',
       },
       {
@@ -1168,7 +1168,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Content repurposing matrix: One insight → LinkedIn post (200 words) → Newsletter section (500 words) → YouTube script (1000 words) → Email (300 words) → Twitter thread (10 tweets). One insight, five assets.',
         whenItWorks: 'Leads come in from content you published weeks ago. Evergreen content is working while you\'re on vacation, sleeping, or serving clients.',
         whenItDoesnt: 'Content doesn\'t generate leads. Check if there\'s a clear CTA in each piece. The best content without a clear next step doesn\'t convert. Add "if this resonated, [specific action]" to every piece.',
-        moranPrinciple: 'Brand building at scale — a content engine compounds your authority over time without compounding your time.',
+        newmrrPrinciple: 'Brand building at scale — a content engine compounds your authority over time without compounding your time.',
         metric: 'Content engine built. 6 weeks of scheduled content. Weekly leads from content tracked.',
       },
       {
@@ -1179,7 +1179,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m running a [90-minute] masterclass on [specific topic] on [date]. Limited to [X] people. Price: $[97-297]. You\'ll leave with [specific deliverable]. At the end, I\'ll share how to go deeper with [your program name]."',
         whenItWorks: '20 attendees at $197 = $3,940. 10% convert to your signature program. That\'s 2 high-value clients from one 90-minute session. Run monthly.',
         whenItDoesnt: 'Can\'t fill the workshop. Your list might not be large enough yet. Partner with someone who can bring their audience. Split the revenue. You get the leads.',
-        moranPrinciple: 'Launch Blitz — paid workshops filter for serious buyers and pre-sell your signature program.',
+        newmrrPrinciple: 'Launch Blitz — paid workshops filter for serious buyers and pre-sell your signature program.',
         metric: 'First masterclass run. Revenue tracked. Conversion to signature program tracked.',
       },
       {
@@ -1190,7 +1190,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Pitch email for speaking: "I speak on [topic] for [audience] and have helped [credentials]. My talk [specific title] teaches [what they\'ll learn] and has [specific result for past audiences]. I\'d love to be considered for [their event/podcast]. Here\'s my one-sheet: [link]."',
         whenItWorks: 'You get booked. One appearance leads to another. The compound authority effect builds over time.',
         whenItDoesnt: 'Getting ignored. Start with smaller stages — local events, small podcasts, industry newsletters. Build your track record before pursuing the big stages.',
-        moranPrinciple: 'Brand building at the highest level — authority is the asset that makes your business sellable and acquirers pay premium for.',
+        newmrrPrinciple: 'Brand building at the highest level — authority is the asset that makes your business sellable and acquirers pay premium for.',
         metric: 'Speaker one-sheet created. 5 pitches sent. First booking tracked.',
       },
       {
@@ -1201,7 +1201,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'m launching a certified [your method name] practitioner program for [professionals who serve your audience]. You learn to use [your system] with your clients and get certified to use the [brand name] methodology. Investment: $[price]. Cohort starts [date]."',
         whenItWorks: 'Other practitioners pay to learn your system and use your brand. Every certified practitioner becomes a referral source and an extension of your brand.',
         whenItDoesnt: 'No practitioners interested. Your methodology might not be systemized enough yet. Finish documenting your signature program first. Certification sells on the back of proven results.',
-        moranPrinciple: 'The exit play — licensing your methodology is the highest-value form of brand monetization.',
+        newmrrPrinciple: 'The exit play — licensing your methodology is the highest-value form of brand monetization.',
         metric: 'Certification program designed. First cohort filled and launched.',
       },
       {
@@ -1212,7 +1212,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Premium touchpoint examples: Personalized video before kick-off call, Branded client portal with their name, Hand-delivered welcome package (for highest-tier clients), Monthly personalized video progress update, Proactive insight emails ("I was thinking about your situation and noticed...").',
         whenItWorks: 'Clients comment on the experience without being asked. "Working with you is so different from anyone else I\'ve hired." That comment becomes a testimonial. That testimonial becomes your best marketing.',
         whenItDoesnt: 'Efforts go unnoticed. The personalization might not be personal enough. Reference something specific from their situation in every touchpoint. Generic premium feels like performance. Specific premium feels like care.',
-        moranPrinciple: 'Serve first at the highest level — premium experience justifies premium price and generates premium referrals.',
+        newmrrPrinciple: 'Serve first at the highest level — premium experience justifies premium price and generates premium referrals.',
         metric: '3 premium touchpoints upgraded. Client feedback on experience collected.',
       },
       {
@@ -1223,7 +1223,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Brand asset inventory: Logo + variations, Color palette + hex codes, Typography system, Brand voice guide (3-5 adjectives + examples of on/off-brand), Values statement, Methodology documentation, All created templates and tools, Client list + contact permissions, Testimonial library.',
         whenItWorks: 'Someone could run your brand without you for 90 days using these assets. That\'s the test. If they could, your brand is exit-ready.',
         whenItDoesnt: 'Assets are incomplete or only in your head. Block one day per week for the next month to complete them. This is the highest-value administrative work you can do.',
-        moranPrinciple: 'Build to sell — brand assets are what acquirers buy. Revenue proves viability; brand proves value.',
+        newmrrPrinciple: 'Build to sell — brand assets are what acquirers buy. Revenue proves viability; brand proves value.',
         metric: 'Brand asset inventory complete. All assets documented and stored centrally.',
       },
       {
@@ -1234,7 +1234,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Financial story format: "Revenue: $[X] trailing 12 months, growing [Y]% YoY. MRR: $[Z], with [churn]% monthly churn. Average customer lifetime: [months]. LTV: $[price × months]. EBITDA margin: [%]." This is your acquisition pitch.',
         whenItWorks: 'The numbers tell a compelling story on their own. Buyers make offers on stories they believe. Your financial story needs to be clean, consistent, and compelling.',
         whenItDoesnt: 'Numbers are messy or incomplete. Get a bookkeeper to clean your books for the last 24 months. The cost of clean books (a few hundred dollars) returns thousands in acquisition premium.',
-        moranPrinciple: '"After selling, do nothing with the money for 6 months. Keep it liquid." ',
+        newmrrPrinciple: '"After selling, do nothing with the money for 6 months. Keep it liquid." ',
         metric: 'Financial model built. Trailing 12-month revenue confirmed. Growth rate calculated.',
       },
       {
@@ -1245,7 +1245,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Exit calculation: Revenue = $[X] × Multiple = [Y]x → Enterprise Value = $[X × Y]. To reach my exit target of $[target]: I need revenue of $[target / multiple]. Timeline to hit that revenue at current growth rate: [months]. Actions to accelerate: [list].',
         whenItWorks: 'You have a clear number and date. Every business decision now runs through this filter: "Does this move me toward the exit?" That clarity eliminates bad decisions.',
         whenItDoesnt: 'The timeline feels too long. Either increase the momentum rate (more aggressive acquisition and retention), increase the multiple (better brand, recurring revenue), or lower the exit target (partial exit, equity investment first).',
-        moranPrinciple: '"The Exit is the point of the whole thing." . The exit isn\'t the end. It\'s the beginning of your next chapter.',
+        newmrrPrinciple: '"The Exit is the point of the whole thing." . The exit isn\'t the end. It\'s the beginning of your next chapter.',
         metric: 'Exit number calculated. Exit date set. Roadmap to exit built.',
       },
     ],
@@ -1258,7 +1258,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], you\'ve been one of our best clients and I want to offer you something exclusive. I\'m launching a [Referral Partner] program for a small group of our top clients. For every referral who becomes a client, you get [meaningful reward]. Interested in a 15-minute call to discuss?"',
         whenItWorks: 'Your 10 referral partners generate 1-2 referrals each per quarter. That\'s 10-20 high-quality leads per quarter from people who already trust you. Premium referrals close at 50%+ vs 20% for cold leads.',
         whenItDoesnt: 'Partners don\'t refer. The reward isn\'t compelling enough, or they don\'t see enough opportunities. Add quarterly dinners or exclusive access — community motivates referrals beyond just money.',
-        moranPrinciple: 'Brand ambassadors at the highest level — at The Scale phase, your customers are your sales team.',
+        newmrrPrinciple: 'Brand ambassadors at the highest level — at The Scale phase, your customers are your sales team.',
         metric: 'Referral network of 10 launched. Monthly referrals generated tracked.',
       },
       {
@@ -1269,7 +1269,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"We both serve [audience]. I\'ve helped [your results]. I\'d like to propose a formal partnership where we [specific co-marketing idea]. I think we could generate [specific outcome] for both of our businesses. Would you be open to an exploratory conversation?"',
         whenItWorks: 'One partner agrees. Their email list introduction to your offer can generate more customers in one day than a month of solo marketing.',
         whenItDoesnt: 'Rejection. The partnership might not be balanced — they might feel they\'re giving more than they receive. Offer to go first: promote them to your audience before asking for anything. Give to get.',
-        moranPrinciple: 'Audience building at scale — a strategic partner is the The Influence Method compressed into one relationship.',
+        newmrrPrinciple: 'Audience building at scale — a strategic partner is the The Influence Method compressed into one relationship.',
         metric: '3 partnership proposals sent. First partnership activated. Revenue attributed to partnership tracked.',
       },
       {
@@ -1280,7 +1280,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Name], your perspective on [what they do] is exactly what I need to make [your business] better. I\'m forming a small advisory board — 5 people whose feedback I trust. Would you be willing to join for a quarterly call? In exchange, I\'d like to offer you [meaningful benefit]."',
         whenItWorks: 'Advisors give you insights that directly improve your offer. They also become your most vocal advocates because they feel ownership in the direction you\'re taking.',
         whenItDoesnt: 'Advisors don\'t engage. The quarterly call might be too formal. Try a Slack channel where you ask one question per month and they respond when convenient.',
-        moranPrinciple: 'Serve first, earn trust, build community — at The Scale phase, your customers and your business become interdependent.',
+        newmrrPrinciple: 'Serve first, earn trust, build community — at The Scale phase, your customers and your business become interdependent.',
         metric: 'Advisory board formed. First quarterly meeting completed. Insights gathered and acted on.',
       },
       {
@@ -1291,7 +1291,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I work with individual [audience] on [skill] and I\'ve noticed that teams and organizations face the same challenges at scale. I\'d love to explore how [your offer] could be adapted for [their company]. Would a 30-minute call with you and [relevant team lead] make sense?"',
         whenItWorks: 'One corporate client signed at a contract value that represents months of individual sales. Use their logo with permission as social proof. Other corporate clients follow.',
         whenItDoesnt: 'Decision cycle is too long. Stay warm with individual value — send them relevant articles, invite them to your workshops. Corporate sales take months. Plant seeds now.',
-        moranPrinciple: 'Exit multiplier — recurring corporate contracts dramatically increase acquisition value at exit.',
+        newmrrPrinciple: 'Exit multiplier — recurring corporate contracts dramatically increase acquisition value at exit.',
         metric: '5 corporate proposals sent. Pipeline value calculated. First corporate client signed.',
       },
       {
@@ -1302,18 +1302,18 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Hey [Name], I admire what you\'ve built with [their business]. I serve [your audience] and I think our work is complementary rather than competitive. I often get inquiries that would be a better fit for you, and vice versa. Would you be open to a referral relationship?"',
         whenItWorks: 'Peers refer clients to you when they\'re over capacity or when the client isn\'t a fit for them. You reciprocate. The network generates deals that neither of you would find independently.',
         whenItDoesnt: 'Nobody reciprocates. Refer to them first and consistently. Reciprocity follows generosity in professional networks.',
-        moranPrinciple: 'Relationships before transactions — the network you build at The Scale phase is worth more than any single deal.',
+        newmrrPrinciple: 'Relationships before transactions — the network you build at The Scale phase is worth more than any single deal.',
         metric: 'Peer referral network of 10 built. Monthly referrals received from network tracked.',
       },
       {
         week: 6,
         title: 'Run Your First Live Event',
-        why: 'At The Scale phase, live events create the deepest relationships with your audience. Your live event does not need to be 500 people — even a 25-person event creates the kind of connection that turns attendees into long-term customers and advocates.',
+        why: 'At The Scale phase, live events create the deepest relationships with your audience. Your live event doesn't need to be 500 people — even a 25-person event creates the kind of connection that turns attendees into long-term customers and advocates.',
         action: 'Plan a half-day or full-day event for your best clients and top prospects. Mix education (your methodology) with community (client roundtables) and celebration (client spotlights). Make attendance feel exclusive.',
         script: '"I\'m hosting [Event Name] — a half-day exclusive event for [your audience]. [X] spots only. Agenda: [morning topic], [lunch], [afternoon topic], [networking]. Investment: $[price] or complimentary for [your clients]. Apply at [link]."',
         whenItWorks: 'Attendees form relationships with each other and with you that last years. The event becomes an annual fixture. The brand association with the event elevates your positioning.',
         whenItDoesnt: 'Low registration. Partner with one other person who has a complementary audience. Split the logistics. Share the registration list.',
-        moranPrinciple: 'A live event makes community tangible. Build yours.',
+        newmrrPrinciple: 'A live event makes community tangible. Build yours.',
         metric: 'First event hosted. Attendance, NPS score, and deals generated from event tracked.',
       },
       {
@@ -1324,7 +1324,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Due to demand, [premium offer name] is currently at capacity. If you\'re interested in working with me at this level, you can apply to the waiting list here: [link]. I\'ll reach out when a spot opens — typically [timeframe]."',
         whenItWorks: 'The waiting list itself generates 5+ applications. The scarcity creates urgency for fence-sitters. When you do open a spot, you have 5 qualified prospects competing for it.',
         whenItDoesnt: 'Nobody applies. Your demand doesn\'t match your supply yet — you\'re not actually at capacity. Focus on filling your current offer before announcing scarcity.',
-        moranPrinciple: 'Brands that sell out command premium prices. Scarcity is a positioning tool, not a limitation.',
+        newmrrPrinciple: 'Brands that sell out command premium prices. Scarcity is a positioning tool, not a limitation.',
         metric: 'Waiting list live. Applications received. Conversion from waitlist to client when spots open.',
       },
       {
@@ -1335,7 +1335,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Thought leadership structure: Contrarian opening (what most people think vs what you know). Evidence from your experience. Case study proving your point. Implication for your audience. Call to think differently.',
         whenItWorks: 'The piece gets shared beyond your existing audience. Someone you\'ve never met shares it. That\'s earned media. That\'s brand at the highest level.',
         whenItDoesnt: 'Falls flat. The idea might not be contrarian enough. The most shared thought leadership challenges a deeply held belief. Find the thing that makes your peers uncomfortable and write about that.',
-        moranPrinciple: '"Your power comes from what you are FOR." . At The Scale phase, stand for something specific.',
+        newmrrPrinciple: '"Your power comes from what you are FOR." . At The Scale phase, stand for something specific.',
         metric: 'Thought leadership piece published. Shares beyond your existing network tracked.',
       },
       {
@@ -1346,7 +1346,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Customer success role: Weekly check-ins with active clients. Monthly progress reviews. Proactive outreach when engagement drops. Escalation to you for at-risk clients. Success story collection. Referral asks for satisfied clients.',
         whenItWorks: 'Churn decreases and referrals increase without your direct involvement. Your CS person becomes your retention engine and your testimonial machine.',
         whenItDoesnt: 'CS person isn\'t proactive enough. The role requires someone who loves relationships and isn\'t afraid to pick up the phone. Give them a script and role-play the check-in call until it feels natural.',
-        moranPrinciple: 'Serve first at scale — a customer success team lets you serve 10x more customers at the level you served when you had 10.',
+        newmrrPrinciple: 'Serve first at scale — a customer success team lets you serve 10x more customers at the level you served when you had 10.',
         metric: 'CS hire made. Churn rate comparison before and after. Testimonials generated per month tracked.',
       },
       {
@@ -1357,7 +1357,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Media page sections: In the Press (logos of publications that featured you), Podcast Appearances (with episode links), Speaking (clips from events), Videos (your best explanations), Quotes (what others have said about you).',
         whenItWorks: 'Prospects arrive on calls having already listened to your podcast appearances or watched your videos. They\'re pre-sold. The call is a formality.',
         whenItDoesnt: 'Sparse media library. Start with owned media — create a YouTube video or podcast episode each week. Owned media builds over time even when earned media is slow.',
-        moranPrinciple: 'Brand equity compounds — every piece of media adds to a library that works while you sleep.',
+        newmrrPrinciple: 'Brand equity compounds — every piece of media adds to a library that works while you sleep.',
         metric: 'Media page built. New media appearances added per month tracked.',
       },
       {
@@ -1368,7 +1368,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Predictive signals examples: Specific job title or situation, Previous budget spent on similar solutions, Specific problem phrase used, Timeline urgency, Referral source. Score each signal 1-3 points. Total score 10+ = highest priority.',
         whenItWorks: 'Your team focuses on high-score leads. Close rate increases. Revenue per sales hour increases. You\'re working smarter at scale.',
         whenItDoesnt: 'Signals don\'t predict consistently. Go back to your customer data and look for different patterns. Sometimes the predictive signal is counterintuitive — not what you\'d expect.',
-        moranPrinciple: 'Systems at scale — at The Scale phase, every growth function needs to run without your judgment in the loop.',
+        newmrrPrinciple: 'Systems at scale — at The Scale phase, every growth function needs to run without your judgment in the loop.',
         metric: 'Predictive scoring model built. 30-day close rate comparison on high-score vs low-score leads.',
       },
       {
@@ -1379,7 +1379,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Gold phase math: To hit 100/day you need [100 ÷ close rate] discovery calls per day, which requires [calls ÷ lead-to-call rate] leads per day. At your current channel productivity, this requires [channels to activate or scale]. Here\'s the 90-day plan: [Month 1: X, Month 2: Y, Month 3: Z].',
         whenItWorks: 'You hit 100 sales/day. The math is real. You\'re at $1M+ run rate. Now you have a choice: sell the business or stack more products and grow to $3M.',
         whenItDoesnt: 'Still far from 100. That\'s okay. The Scale phase takes time. The key is that all your systems are in place and you\'re compounding. Trust the math and the framework.',
-        moranPrinciple: '"100 sales per day is a million-dollar brand." . You\'re building one.',
+        newmrrPrinciple: '"100 sales per day is a million-dollar brand." . You\'re building one.',
         metric: 'Current daily sales rate calculated. Gap to 100 quantified. 90-day plan built.',
       },
     ],
@@ -1392,7 +1392,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Role priority: Fill the role where your absence would hurt most. If you\'re the only salesperson — hire a salesperson first. If delivery breaks without you — build a delivery manager first. If operations are chaotic — hire an ops lead first.',
         whenItWorks: 'One key role filled. You free 20+ hours per week. Those hours go into strategy, deals, and relationships — the things only you can do.',
         whenItDoesnt: 'Can\'t find the right person. Lower the bar on experience, raise it on attitude. A person who figures things out is worth more than an experienced person who follows instructions.',
-        moranPrinciple: 'Owner\'s Model — you build the business that builds the team that serves the customers. That\'s the sequence.',
+        newmrrPrinciple: 'Owner\'s Model — you build the business that builds the team that serves the customers. That\'s the sequence.',
         metric: 'Leadership team audit complete. Most critical hire identified. Process started.',
       },
       {
@@ -1403,7 +1403,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'OKR format: Objective: [Inspiring, qualitative goal]. KR1: [Specific measurable outcome]. KR2: [Specific measurable outcome]. KR3: [Specific measurable outcome]. Example: Objective: Become the market leader for [your audience]. KR1: Hit $[X] MRR. KR2: Achieve 50 customer testimonials. KR3: Launch podcast with 1000+ listeners.',
         whenItWorks: 'Your team is making decisions aligned with the objectives without asking you. That\'s the point — they know what winning looks like and they optimize for it.',
         whenItDoesnt: 'OKRs get forgotten after the first week. Build a weekly check-in: 15 minutes, each person shares one update on their OKRs. Visibility drives accountability.',
-        moranPrinciple: 'Systems at scale — at The Scale phase, your strategy lives in a document that your team executes, not in your head.',
+        newmrrPrinciple: 'Systems at scale — at The Scale phase, your strategy lives in a document that your team executes, not in your head.',
         metric: 'Company OKRs set. Team OKRs set. Weekly check-in cadence established.',
       },
       {
@@ -1414,7 +1414,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Sales training sequence: Week 1 — Product mastery (know the offer, the results, the case studies). Week 2 — Process mastery (shadow calls with debrief). Week 3 — Supervised practice (they lead, you observe). Week 4 — Independent with weekly pipeline reviews.',
         whenItWorks: 'Your salesperson closes at 40%+ on discovery calls. At 40%, they\'re adding significant revenue without your time. The cost of the hire is covered by even 2 extra closes per month.',
         whenItDoesnt: 'Close rate is too low. Record their calls. Find the specific moment they lose people. It\'s usually one of three things: not asking enough questions, pitching too early, or weak objection handling. Fix the one thing.',
-        moranPrinciple: 'The growth phase sales team is what bridges 25 sales/day to 100 sales/day.',
+        newmrrPrinciple: 'The growth phase sales team is what bridges 25 sales/day to 100 sales/day.',
         metric: 'Salesperson hired and trained. Close rate compared to your own. Revenue attributed to salesperson tracked.',
       },
       {
@@ -1425,7 +1425,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Acquisition flow: Awareness (content, ads, partnerships) → Interest (lead magnet, webinar opt-in) → Qualification (lead scoring, inquiry form) → Call (discovery call booking) → Close (discovery call → proposal → signature). Each step tracked with a conversion rate.',
         whenItWorks: 'The machine runs without you touching it. Leads flow in, get qualified, book calls, close — you only appear at the highest-value moments.',
         whenItDoesnt: 'Bottleneck exists at one step. Invest all attention there first. A chain is only as strong as its weakest link.',
-        moranPrinciple: 'At The Scale phase, growth is systematic, not sporadic. Build the machine, then manage the machine.',
+        newmrrPrinciple: 'At The Scale phase, growth is systematic, not sporadic. Build the machine, then manage the machine.',
         metric: 'Acquisition flow mapped. Conversion rate at each step measured. Bottleneck identified and fixed.',
       },
       {
@@ -1436,7 +1436,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Media company positioning: "We help [audience] achieve [outcome] through [your media]. Every [week/episode/issue] we share [type of content] from [your experience and network]. Subscribe at [link]."',
         whenItWorks: 'Your media builds an audience independent of your client relationships. When you launch offers, you launch to an audience. That\'s the power of a media company — you own distribution.',
         whenItDoesnt: 'Hard to sustain. Batch production is the answer — record 4 podcast episodes in one afternoon. Write 4 newsletters in one morning. Systems beat willpower.',
-        moranPrinciple: 'A media company funds, fills, and validates your core business.',
+        newmrrPrinciple: 'A media company funds, fills, and validates your core business.',
         metric: 'Media format chosen. First 4 pieces produced and scheduled. Audience growth tracked monthly.',
       },
       {
@@ -1447,7 +1447,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Expansion test message: "I typically work with [current audience] on [skill]. I\'ve been exploring whether the same approach would help [new audience]. I\'d love 20 minutes to understand your situation and see if there\'s a fit. Would that be valuable?"',
         whenItWorks: 'The new market responds and converts at similar rates. You now have two markets. Your revenue ceiling just doubled.',
         whenItDoesnt: 'New market doesn\'t respond. The positioning might need to change even if the core service doesn\'t. Language that resonates with [audience A] might fall flat for [audience B].',
-        moranPrinciple: 'Building audiences — at scale, new markets are new audiences for your existing products.',
+        newmrrPrinciple: 'Building audiences — at scale, new markets are new audiences for your existing products.',
         metric: 'One adjacent market identified. 10 test outreach messages sent. Response rate compared to primary market.',
       },
       {
@@ -1458,7 +1458,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Dashboard structure: Left column — this week. Middle column — last week. Right column — trend direction (up/down/flat). Review every Monday morning. Any metric trending down for 3 consecutive weeks gets immediate attention.',
         whenItWorks: 'You catch a churn increase 3 weeks before it becomes a revenue problem. You catch a marketing channel ROI drop before wasting budget. Data prevents expensive surprises.',
         whenItDoesnt: 'Dashboard doesn\'t get reviewed. Schedule a recurring Monday calendar block: 30 minutes, dashboard only. Non-negotiable. The discipline to look at data is the discipline that builds great businesses.',
-        moranPrinciple: 'Exit-ready — a business with clear metrics and trends is worth more to an acquirer than one without.',
+        newmrrPrinciple: 'Exit-ready — a business with clear metrics and trends is worth more to an acquirer than one without.',
         metric: 'Dashboard built. Weekly review cadence established. First insight that changed a decision.',
       },
       {
@@ -1469,7 +1469,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Partnership value propositions by type: Referral partner: "I send you clients, you send me clients." Integration partner: "Our solutions work better together." White-label partner: "License our methodology for your platform." Distribution partner: "Sell our offer to your audience on revenue share."',
         whenItWorks: 'One partner category generates more leads than all your direct marketing combined. Invest everything in that partner type.',
         whenItDoesnt: 'Partners don\'t prioritize sending you business. Build into the partnership a mechanism that makes referral easy — give them content, a simple referral process, and regular reminders. Out of sight = out of referrals.',
-        moranPrinciple: 'Stacking at the highest level — partners multiply your reach without multiplying your cost.',
+        newmrrPrinciple: 'Stacking at the highest level — partners multiply your reach without multiplying your cost.',
         metric: 'Partner ecosystem map built. One partner per category activated. Revenue by partner source tracked.',
       },
       {
@@ -1480,7 +1480,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Investor deck structure: Problem (1 slide) → Solution (1 slide) → Market (1 slide) → Traction (2 slides — the most important) → Business model (1 slide) → Team (1 slide) → Ask (1 slide). 8 slides total. Less is more.',
         whenItWorks: 'The deck tells a story that makes people want to give you money or buy your business. That clarity also makes your business decisions clearer.',
         whenItDoesnt: 'Traction slide is weak. That\'s the signal — investors only care about traction. If your traction isn\'t compelling, focus on growth before raising.',
-        moranPrinciple: 'The Capitalism Fund model — raised and deployed capital strategically. At The Scale phase, you should understand how capital can accelerate your path.',
+        newmrrPrinciple: 'The Capitalism Fund model — raised and deployed capital strategically. At The Scale phase, you should understand how capital can accelerate your path.',
         metric: 'Investor deck completed. Reviewed by one person outside your business for clarity.',
       },
       {
@@ -1491,7 +1491,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Acquisition analysis per target: Company name → Why they might want us → What we\'d need to demonstrate → Estimated multiple they pay → Timeline to be ready. Review this list quarterly and build toward the criteria of your top target.',
         whenItWorks: 'Your growth decisions start to optimize for what your most likely acquirer values — recurring revenue, brand, customer base, or methodology. Alignment increases your eventual exit multiple.',
         whenItDoesnt: 'No clear acquirers. That\'s a positioning problem. If nobody obvious would buy your business, you haven\'t differentiated enough yet. Niche down until you become the obvious acquisition target for someone.',
-        moranPrinciple: 'The Exit is engineered, not stumbled into. Know who will buy you before you\'re ready to sell.',
+        newmrrPrinciple: 'The Exit is engineered, not stumbled into. Know who will buy you before you\'re ready to sell.',
         metric: 'Acquisition target list built. Top 3 targets identified. Business built to match their acquisition criteria.',
       },
       {
@@ -1502,7 +1502,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Year 1 targets: Revenue $[X], Customers [Y], Team [Z people], Key milestone: [biggest unlock for Year 2].\nYear 2: Revenue $[3X], Customers [3Y], Team [2Z], Key milestone: [what enables Year 3].\nYear 3: Revenue $[9X], Customers [9Y], Exit or raise at $[multiple × revenue].',
         whenItWorks: 'The model reveals the 3-5 decisions that determine whether Year 3 happens. Those become your strategic priorities for the next 12 months.',
         whenItDoesnt: 'Projections feel made up. They are — that\'s okay. The value is in the thinking, not the accuracy. The model forces you to ask: what would need to be true for this to happen?',
-        moranPrinciple: '1000-day goal — thinks in 1000-day (≈3 year) cycles. The perspective changes every decision.',
+        newmrrPrinciple: '1000-day goal — thinks in 1000-day (≈3 year) cycles. The perspective changes every decision.',
         metric: '3-year model built. Top 3 strategic priorities for next 12 months identified.',
       },
       {
@@ -1513,7 +1513,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"I\'ve been building [business name] for [X years] and we\'re at [$X revenue] growing [Y]% annually. I\'m not actively looking to sell right now but I\'m curious about how businesses like ours are valued in today\'s market. Would you be willing to share your perspective in a 30-minute call?"',
         whenItWorks: 'You learn what they value, what they discount, and what would make your business worth more to them. That knowledge is worth more than any growth hack.',
         whenItDoesnt: 'They want to move faster than you\'re ready for. That\'s a sign your business is more valuable than you thought. It\'s okay to say "I\'m not ready yet but let\'s stay in touch."',
-        moranPrinciple: '"The Exit" — sold Sheer Strength for $17.5M. The conversation that led to that sale started years before it happened.',
+        newmrrPrinciple: '"The Exit" — sold Sheer Strength for $17.5M. The conversation that led to that sale started years before it happened.',
         metric: 'First exit conversation had. Key learnings documented. Gaps between current state and ideal acquisition state mapped.',
       },
     ],
@@ -1526,7 +1526,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'NRR calculation: (MRR from existing customers 12 months ago + Expansion MRR - Contraction MRR - Churned MRR) ÷ MRR from existing customers 12 months ago × 100. Target: >100%. Best-in-class: >120%.',
         whenItWorks: 'NRR is above 100%. That means your existing customers are worth more each year. That\'s the compounding engine that builds billion-dollar subscription businesses.',
         whenItDoesnt: 'NRR is under 100%. Churn is eating your expansion. Focus on reducing churn before adding new subscribers. A leaky bucket can\'t be filled.',
-        moranPrinciple: 'The Scale phase formula for subscription — when customers expand, the model compounds without acquisition costs.',
+        newmrrPrinciple: 'The Scale phase formula for subscription — when customers expand, the model compounds without acquisition costs.',
         metric: 'NRR calculated. Benchmark set. Monthly NRR tracked going forward.',
       },
       {
@@ -1537,7 +1537,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Tier design principle: Starter (access to the core) → Professional (access to the core + your direct involvement) → Premium (access to core + direct involvement + exclusivity). Price ratio should be roughly 1:3:10. Example: $47 / $147 / $497.',
         whenItWorks: '30% of subscribers are on the top tier. That 30% represents disproportionate revenue and provides your highest-value case studies and testimonials.',
         whenItDoesnt: 'Everyone stays on Starter. Your tiers might not be differentiated enough. The Professional and Premium tiers need to feel genuinely different — not just more content, but more access and more results.',
-        moranPrinciple: 'Product stacking vertically — tiers serve the same audience at different price points and different depths of relationship.',
+        newmrrPrinciple: 'Product stacking vertically — tiers serve the same audience at different price points and different depths of relationship.',
         metric: 'Tier structure designed. Existing subscribers migrated to appropriate tier. Revenue by tier tracked.',
       },
       {
@@ -1548,7 +1548,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"For the next 30 days, I\'m offering annual plans for [subscription name] at $[10 × monthly price] — that\'s 2 months free. Annual subscribers also get [exclusive bonus]. This promotion ends [specific date]. Upgrade at [link]."',
         whenItWorks: '20-30% of monthly subscribers upgrade to annual. Your cash position improves dramatically. Churn rate among annual subscribers drops to near zero.',
         whenItDoesnt: 'Low uptake. The bonus might not be compelling enough. Try a different bonus — a 1-on-1 session, early access to your next product, or a locked-in rate guarantee for life.',
-        moranPrinciple: 'Predictable revenue is the foundation of growth — annual plans give you the visibility to invest confidently.',
+        newmrrPrinciple: 'Predictable revenue is the foundation of growth — annual plans give you the visibility to invest confidently.',
         metric: 'Annual promotion run. Annual plan conversion rate. Change in monthly cash flow tracked.',
       },
       {
@@ -1559,7 +1559,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"[Subscription name] includes [base amount]. Need more? Add-on [specific thing] is available for $[price per unit]. Just reply to this email and I\'ll add it to your account."',
         whenItWorks: 'Active subscribers start adding on. Revenue per customer increases without churn risk. Usage data tells you what to build next.',
         whenItDoesnt: 'Nobody adds on. The add-on might not be the thing they actually need more of. Survey your most engaged subscribers: "If you could get more of one thing, what would it be?" Build that.',
-        moranPrinciple: 'Revenue expansion without acquisition — usage-based expansion is the highest-efficiency growth at scale.',
+        newmrrPrinciple: 'Revenue expansion without acquisition — usage-based expansion is the highest-efficiency growth at scale.',
         metric: 'Usage-based add-on launched. Attach rate (% of subscribers who add on) tracked monthly.',
       },
       {
@@ -1570,7 +1570,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Community manager role: Morning check-in post (5 minutes), respond to all member posts within 2 hours, weekly member spotlight, monthly challenge facilitation, proactive DM to any member who hasn\'t engaged in 14 days.',
         whenItWorks: 'Engagement rate doubles. Churn among engaged members drops to near zero. The community manager becomes the face that subscribers associate with the day-to-day value of the subscription.',
         whenItDoesnt: 'Community manager doesn\'t create genuine engagement — just announcements. The role requires someone who genuinely cares about the members. Content scheduling doesn\'t replace authentic connection.',
-        moranPrinciple: 'Community is the product at scale — The One Percent community is the reason people stay in the ecosystem.',
+        newmrrPrinciple: 'Community is the product at scale — The One Percent community is the reason people stay in the ecosystem.',
         metric: 'Community manager hired. Daily active member rate before and after. Churn rate comparison.',
       },
       {
@@ -1581,7 +1581,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"If you [specific actions subscriber must take] for [timeframe] and don\'t [specific measurable result], I\'ll [your guarantee — refund, free extension, personal session]. I\'ve never had to honor this guarantee for a subscriber who actually did the work. That\'s how confident I am in the system."',
         whenItWorks: 'Conversion rate increases by 20-40%. Fence-sitters who were held back by risk now subscribe. Ironically, fewer people claim the guarantee because committed subscribers get results.',
         whenItDoesnt: 'Too many people claiming the guarantee. Your promise might be too generous or your system might need improvement. Analyze everyone who claims it — is there a pattern in what they didn\'t do?',
-        moranPrinciple: 'The guarantee is the cornerstone of The One Percent. At The Scale phase, you stand behind your system completely.',
+        newmrrPrinciple: 'The guarantee is the cornerstone of The One Percent. At The Scale phase, you stand behind your system completely.',
         metric: 'Guarantee designed and launched. Conversion rate change tracked. Guarantee claims tracked.',
       },
       {
@@ -1592,7 +1592,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Announcing [Summit Name] — the annual gathering for [subscription name] members. [Date]. Featuring: [guest speaker 1], [guest speaker 2], Member Showcase, and [exclusive session with you]. Subscribers attend free. Non-subscribers: $[price]."',
         whenItWorks: 'Existing subscribers renew to maintain their free access. Non-subscribers who pay to attend become subscriber prospects. The summit becomes an annual acquisition event.',
         whenItDoesnt: 'Low attendance. Promote earlier (6 weeks out), make the speaker lineup more compelling, or reduce the friction to attend (shorter, more virtual-friendly format).',
-        moranPrinciple: 'CapCon is the community made real — live events deepen the belonging that subscriptions depend on.',
+        newmrrPrinciple: 'CapCon is the community made real — live events deepen the belonging that subscriptions depend on.',
         metric: 'Summit hosted. Attendee count. Non-subscriber to subscriber conversion rate from summit.',
       },
       {
@@ -1603,7 +1603,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'LTV calculation: LTV = Monthly Revenue per Subscriber × (1 ÷ Monthly Churn Rate). Example: $97/month × (1 ÷ 5% churn) = $97 × 20 = $1,940 LTV. If your CAC (cost to acquire) is under $650 (⅓ of LTV), paid acquisition is profitable.',
         whenItWorks: 'Your LTV/CAC ratio is above 3:1. That means paid acquisition is profitable. Scale your ad spend until the ratio drops to 3:1 — that\'s the efficient frontier.',
         whenItDoesnt: 'LTV/CAC is under 3:1. Either increase LTV (reduce churn, increase price, add tiers) or reduce CAC (better targeting, improve organic). Don\'t scale paid acquisition until this ratio is healthy.',
-        moranPrinciple: 'The $1M formula — knowing your unit economics precisely is what lets you hit 100 sales/day without burning capital.',
+        newmrrPrinciple: 'The $1M formula — knowing your unit economics precisely is what lets you hit 100 sales/day without burning capital.',
         metric: 'LTV by tier calculated. CAC by channel calculated. LTV/CAC ratio tracked monthly.',
       },
       {
@@ -1614,7 +1614,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"Starting next month, [Premium tier] subscribers receive [monthly physical item] — [what it is and why it\'s valuable]. This is included in your subscription at no extra cost and will ship on [date] each month."',
         whenItWorks: 'Premium tier subscribers mention the physical element as a reason they stay. The box generates social media posts — people share unboxings. That\'s organic acquisition.',
         whenItDoesnt: 'Fulfillment is too complex. Use a service like Printful, Sticker Mule, or a local print shop for small runs. Start with one simple physical item before building a full kit.',
-        moranPrinciple: '"Physical products are one of the last great business models." . Adding physical elements to subscriptions compounds both value and retention.',
+        newmrrPrinciple: '"Physical products are one of the last great business models." . Adding physical elements to subscriptions compounds both value and retention.',
         metric: 'Physical element launched. Impact on churn in premium tier. Social mentions generated.',
       },
       {
@@ -1625,7 +1625,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: '"As a [subscription name] alumnus, you\'re still part of our community. Join our alumni group for ongoing [value]. And when you\'re ready to re-subscribe, your alumni rate is $[discounted price] — a permanent benefit for your tenure with us."',
         whenItWorks: 'Alumni refer new subscribers. Alumni resubscribe when their situation changes. The alumni community becomes a talent pool for partnerships and collaborations.',
         whenItDoesnt: 'Nobody engages with alumni community. The value proposition might not be strong enough. Survey alumni: "What would make staying connected to [community name] worth your time?" Build that.',
-        moranPrinciple: 'Lifetime customer relationships — at The Scale phase, a cancelled subscription is a pause, not a goodbye.',
+        newmrrPrinciple: 'Lifetime customer relationships — at The Scale phase, a cancelled subscription is a pause, not a goodbye.',
         metric: 'Alumni program launched. Alumni community size. Resubscription rate from alumni vs cold traffic.',
       },
       {
@@ -1636,7 +1636,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Cancellation intervention matrix: Reason 1: Too busy → Intervention: Pause option (keep them, just pause). Reason 2: Not seeing results → Intervention: Success check-in call at the 30-day mark. Reason 3: Too expensive → Intervention: Offer lower tier before cancellation.',
         whenItWorks: 'Average subscription lifetime increases from [current] to [target]. Each month of additional lifetime multiplied by all subscribers is your revenue impact.',
         whenItDoesnt: 'Interventions don\'t change churn. The cancellation reasons might be symptoms, not causes. Go deeper — ask the person behind the reason. "I\'m too busy" usually means "I\'m not getting enough value for my time." Solve that.',
-        moranPrinciple: 'Retention is the momentum strategy — at The Scale phase, retaining one subscriber is worth 5x finding a new one.',
+        newmrrPrinciple: 'Retention is the momentum strategy — at The Scale phase, retaining one subscriber is worth 5x finding a new one.',
         metric: 'Average subscriber lifetime before and after interventions. Revenue impact calculated.',
       },
       {
@@ -1647,7 +1647,7 @@ const MISSION_TRACKS: Record<Phase, Record<Block, Mission[]>> = {
         script: 'Exit metrics presentation: "ARR: $[X], growing [Y]% annually. NRR: [Z]% (subscribers expand over time). LTV/CAC: [ratio] (every $1 invested in acquisition returns $[ratio]). Churn: [%] monthly. Average lifetime: [months]. MoM growth: [%]."',
         whenItWorks: 'Your metrics tell a compelling story. A buyer who sees these numbers understands the value immediately. Great subscription metrics speak for themselves.',
         whenItDoesnt: 'Metrics aren\'t compelling enough yet. NRR below 100% and churn above 5% are the most common issues. Fix these first. A subscription business with poor retention metrics sells at a steep discount.',
-        moranPrinciple: '"The Exit" for subscription businesses is built on metrics. Build the metrics and the payday follows.',
+        newmrrPrinciple: '"The Exit" for subscription businesses is built on metrics. Build the metrics and the payday follows.',
         metric: 'Exit metrics package built. Subscription business valued at current metrics. Gap to target exit value mapped.',
       },
     ],
