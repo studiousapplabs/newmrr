@@ -7,10 +7,17 @@ import { calculateAuditResult } from '@/lib/audit-engine'
 const QUESTIONS = [
   {
     id: 'first_name',
-    question: "First, what's your first name?",
-    subtext: "We'll use this to personalize everything for you.",
+    question: "What is your first name?",
+    subtext: "We will use this to personalize everything for you.",
     type: 'text',
-    placeholder: 'Your first name',
+    placeholder: 'First name',
+    autoSave: true,
+  },
+  {
+    id: 'last_name',
+    question: "And your last name?",
+    type: 'text',
+    placeholder: 'Last name',
     autoSave: true,
   },
   {
@@ -164,17 +171,37 @@ export default function AuditPage() {
   const progress = (currentQ / QUESTIONS.length) * 100
   const currentAnswer = answers[question.id]
 
-  async function autoSave(fieldId: string, value: string) {
-    const emailToUse = fieldId === 'email' ? value : (emailRef.current || answers.email)
+  async function autoSave(fieldId: string, value: string, currentAnswers?: Record<string, string>) {
+    const allAnswers = currentAnswers || answers
+    const emailToUse = fieldId === 'email' ? value : (emailRef.current || allAnswers.email)
     if (!emailToUse) return
 
+    // Build payload from ALL answers we have so far
     const payload: Record<string, string> = {
       email: emailToUse,
-      [fieldId]: value,
       trigger: 'partial',
     }
-    if (answers.first_name) payload.first_name = answers.first_name
-    if (fieldId === 'first_name') payload.first_name = value
+
+    // Include all existing answers
+    Object.entries(allAnswers).forEach(([key, val]) => {
+      if (val) payload[key] = val
+    })
+
+    // Override with the current field being saved
+    payload[fieldId] = value
+
+    // Map field IDs to Supabase column names
+    const fieldMap: Record<string, string> = {
+      priceComfort: 'price_comfort',
+      biggestBlock: 'biggest_block',
+      revenueGoal: 'revenue_goal',
+      timePerWeek: 'time_per_week',
+    }
+    Object.entries(fieldMap).forEach(([key, dbKey]) => {
+      if (payload[key]) {
+        payload[dbKey] = payload[key]
+      }
+    })
 
     try {
       await fetch('/api/lead-capture', {
@@ -190,6 +217,7 @@ export default function AuditPage() {
   function handleOption(value: string) {
     const updated = { ...answers, [question.id]: value }
     setAnswers(updated)
+    autoSave(question.id, value, updated)
     advance(updated)
   }
 
@@ -197,16 +225,17 @@ export default function AuditPage() {
     if (!textValue.trim()) return
     const updated = { ...answers, [question.id]: textValue.trim() }
     if (question.id === 'email') emailRef.current = textValue.trim()
-    if (question.autoSave) autoSave(question.id, textValue.trim())
+    // Always auto-save every field
+    autoSave(question.id, textValue.trim(), updated)
     setAnswers(updated)
     advance(updated)
   }
 
   function handleTextBlur() {
-    if ((question.id === 'email' || question.id === 'first_name') && textValue.trim()) {
-      if (question.id === 'email') emailRef.current = textValue.trim()
-      autoSave(question.id, textValue.trim())
-    }
+    if (!textValue.trim()) return
+    if (question.id === 'email') emailRef.current = textValue.trim()
+    // Save on blur for every field
+    autoSave(question.id, textValue.trim())
   }
 
   function advance(updatedAnswers: Record<string, string>) {
@@ -236,6 +265,7 @@ export default function AuditPage() {
         body: JSON.stringify({
           email: finalAnswers.email,
           first_name: finalAnswers.first_name,
+          last_name: finalAnswers.last_name,
           skill: finalAnswers.skill,
           industry: finalAnswers.industry,
           niche: finalAnswers.niche,

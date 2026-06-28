@@ -14,7 +14,8 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { 
       email, 
-      first_name, 
+      first_name,
+      last_name, 
       last_name,
       city,
       state,
@@ -32,6 +33,7 @@ export async function POST(req: NextRequest) {
       price_comfort,
       revenue_goal,
       biggest_block,
+      time_per_week,
       audit_complete,
       payment_complete,
       groq_skill_label,
@@ -54,6 +56,7 @@ export async function POST(req: NextRequest) {
         email: email.toLowerCase().trim(),
         ...(first_name && { first_name }),
         ...(last_name && { last_name }),
+        ...(last_name && { last_name }),
         ...(city && { city }),
         ...(state && { state }),
         ...(industry && { industry }),
@@ -70,6 +73,7 @@ export async function POST(req: NextRequest) {
         ...(price_comfort && { price_comfort }),
         ...(revenue_goal && { revenue_goal }),
         ...(biggest_block && { biggest_block }),
+        ...(time_per_week && { time_per_week }),
         ...(audit_complete !== undefined && { audit_complete }),
         ...(payment_complete !== undefined && { payment_complete }),
         ...(groq_skill_label && { groq_skill_label }),
