@@ -31,16 +31,32 @@ export default function NavClient() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {user ? (
             <>
-              <a href="/dashboard" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Dashboard</a>
-              <a href="/account" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Account</a>
-              <button onClick={handleSignOut} style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '8px 16px', color: 'var(--text-muted)', fontSize: '0.82rem', cursor: 'pointer' }}>
+              <a href="/dashboard" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                Dashboard
+              </a>
+              <a href="/account" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                Account
+              </a>
+              <button
+                onClick={handleSignOut}
+                style={{
+                  background: 'none', border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius)', padding: '8px 16px',
+                  color: 'var(--text-muted)', fontSize: '0.82rem', cursor: 'pointer',
+                }}
+              >
                 Sign out
               </button>
             </>
           ) : (
             <>
-              <a href="/login" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Sign in</a>
-              <a href="/audit" className="btn-primary" style={{ padding: '10px 24px', fontSize: '0.85rem' }}>Take the Free Audit →</a>
+              <a href="/faq" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>FAQ</a>
+              <a href="/login" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                Sign in
+              </a>
+              <a href="/audit" className="btn-primary" style={{ padding: '10px 24px', fontSize: '0.85rem' }}>
+                Take the Free Audit →
+              </a>
             </>
           )}
         </div>

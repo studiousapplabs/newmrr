@@ -226,6 +226,10 @@ export default function HomePage() {
       <footer style={{ borderTop: '1px solid var(--border)', padding: '32px 0' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
           <div className="nav-logo">New<span style={{ color: 'var(--gold)' }}>MRR</span> Wealth Group</div>
+          <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            <a href="/faq" style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>FAQ</a>
+            <a href="mailto:hello@newmrr.com" style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>Contact</a>
+          </div>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.8rem' }}>
             © {new Date().getFullYear()} NewMRR Wealth Group. Built to build wealth.
           </p>
