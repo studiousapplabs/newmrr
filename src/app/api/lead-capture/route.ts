@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
       email, 
       first_name,
       last_name, 
-      last_name,
       city,
       state,
       industry,
